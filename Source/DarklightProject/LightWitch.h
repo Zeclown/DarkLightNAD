@@ -15,8 +15,8 @@ class DARKLIGHTPROJECT_API ALightWitch : public ADarklightProjectCharacter
 	
 protected:
 	/**Tick event called by the blueprint */
-	void Tick(float DeltaTime);
-	void BeginPlay();
+	void Tick(float DeltaTime) override;
+	void BeginPlay() override;
 public:
 	ALightWitch();
 	

@@ -20,6 +20,8 @@ ADarklightProjectCharacter::ADarklightProjectCharacter()
 	GetCharacterMovement()->MaxWalkSpeed = 600.f;
 	GetCharacterMovement()->MaxFlySpeed = 600.f;
 	MaxHealth = 100;
+	TrailLenght = 1;
+	bChargedUp = true;
 	PrimaryActorTick.bCanEverTick = true;
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
