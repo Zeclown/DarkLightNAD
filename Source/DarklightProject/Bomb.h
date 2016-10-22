@@ -23,7 +23,7 @@ public:
 	float Radius;
 	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = "Bomb Mechanism")
 	float Damage;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = "Bomb Mechanism")
+	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = "Bomb Mechanism", meta = (ClampMin = 0.001f))
 	float TimeBeforeExplosion;
 	FTimerHandle ExplosionHandle;
 
