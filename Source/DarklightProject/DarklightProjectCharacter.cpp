@@ -19,7 +19,6 @@ ADarklightProjectCharacter::ADarklightProjectCharacter()
 	GetCharacterMovement()->GroundFriction = 3.f;
 	GetCharacterMovement()->MaxWalkSpeed = 600.f;
 	GetCharacterMovement()->MaxFlySpeed = 600.f;
-	MaxHealth = 100;
 	TrailLenght = 1;
 	bChargedUp = true;
 	PrimaryActorTick.bCanEverTick = true;
@@ -52,6 +51,12 @@ void ADarklightProjectCharacter::MoveRight(float Value)
 {
 	// add movement in that direction
 	AddMovementInput(FVector(0.f, 1.f, 0.f), Value);
+}
+
+float ADarklightProjectCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser)
+{
+	Health -= DamageAmount;
+	return DamageAmount;
 }
 
 

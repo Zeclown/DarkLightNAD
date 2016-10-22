@@ -22,9 +22,9 @@ protected:
 	/**Tick event called by the blueprint */
 	void Tick(float deltaTime);
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "PlayerState")
-		float Health;
+	float Health;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PlayerState")
-		float MaxHealth;
+	float MaxHealth;
 
 
 public:
@@ -44,5 +44,6 @@ public:
 	//Is the player charged up and ready to produce a collision with another trail
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trail")
 	bool bChargedUp;
+	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser) override;
 
 };

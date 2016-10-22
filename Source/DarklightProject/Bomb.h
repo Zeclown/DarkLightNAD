@@ -5,20 +5,28 @@
 #include "GameFramework/Actor.h"
 #include "Bomb.generated.h"
 
-UCLASS()
+UCLASS(ABSTRACT)
 class DARKLIGHTPROJECT_API ABomb : public AActor
 {
 	GENERATED_BODY()
-	
+
+protected:
+	UFUNCTION(BlueprintImplementableEvent, Category = "Bomb Mechanism")
+	void Explode();
 public:	
 	// Sets default values for this actor's properties
 	ABomb();
 
 	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-	
-	// Called every frame
-	virtual void Tick( float DeltaSeconds ) override;
+	void BeginPlay() override;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Bomb Mechanism")
+	float Radius;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = "Bomb Mechanism")
+	float Damage;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = "Bomb Mechanism")
+	float TimeBeforeExplosion;
+	FTimerHandle ExplosionHandle;
+
 
 	
 	
