@@ -20,4 +20,7 @@ protected:
 
 public:
 	ADarkWitch();
+	//The Maximum HP assigned to both characters at the start for the game
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Player State",meta=(ClampMin=0))
+	float MaxHealth;
 };

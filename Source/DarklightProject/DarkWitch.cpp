@@ -1,4 +1,4 @@
-//Owner:Pierre-Olivier Chartrand
+
 
 #include "DarklightProject.h"
 #include "DarkWitch.h"
@@ -6,7 +6,7 @@
 ADarkWitch::ADarkWitch()
 {
 	PrimaryActorTick.bCanEverTick = true;
-
+	MaxHealth = 100;
 }
 void ADarkWitch::SetupPlayerInputComponent(UInputComponent * InputComponent)
 {
@@ -24,7 +24,9 @@ void ADarkWitch::SetupPlayerInputComponent(UInputComponent * InputComponent)
 void ADarkWitch::BeginPlay()
 {
 	Super::BeginPlay();
-
+	//Set the hp for both characters
+	GlobalHealth = MaxHealth;
+	GlobalMaxHealth = MaxHealth;
 }
 
 void ADarkWitch::Tick(float DeltaTime)

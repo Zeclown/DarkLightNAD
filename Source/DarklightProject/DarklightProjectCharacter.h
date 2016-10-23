@@ -21,10 +21,9 @@ protected:
 	// End of APawn interface
 	/**Tick event called by the blueprint */
 	void Tick(float deltaTime);
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "PlayerState")
-	float Health;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PlayerState")
-	float MaxHealth;
+
+	static float GlobalHealth;
+	static float GlobalMaxHealth;
 
 
 public:
@@ -44,6 +43,15 @@ public:
 	//Is the player charged up and ready to produce a collision with another trail
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trail")
 	bool bChargedUp;
+	UFUNCTION(BlueprintCallable, Category = "Player State")
 	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser) override;
+	UFUNCTION(BlueprintCallable, Category = "Player State")
+	static float GetHealth();
+	UFUNCTION(BlueprintCallable,Category="Player State")
+	static void SetHealth(float HealthPoints);
+	UFUNCTION(BlueprintCallable, Category = "Player State")
+	static float GetMaxHealth();
+	UFUNCTION(BlueprintCallable, Category = "Player State")
+	static void SetMaxHealth(float HealthPoints);
 
 };

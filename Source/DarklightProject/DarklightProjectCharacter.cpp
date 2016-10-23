@@ -1,6 +1,7 @@
 #include "DarklightProject.h"
 #include "DarklightProjectCharacter.h"
-
+float ADarklightProjectCharacter::GlobalMaxHealth = 100;
+float ADarklightProjectCharacter::GlobalHealth = GlobalMaxHealth;
 ADarklightProjectCharacter::ADarklightProjectCharacter()
 {
 	// Set size for collision capsule
@@ -55,8 +56,28 @@ void ADarklightProjectCharacter::MoveRight(float Value)
 
 float ADarklightProjectCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser)
 {
-	Health -= DamageAmount;
+	GlobalHealth -= DamageAmount;
 	return DamageAmount;
+}
+
+float ADarklightProjectCharacter::GetHealth()
+{
+	return GlobalHealth;
+}
+
+void ADarklightProjectCharacter::SetHealth(float HealthPoints)
+{
+	GlobalHealth = FMath::Clamp(HealthPoints,0.0f,GlobalMaxHealth);
+}
+
+float ADarklightProjectCharacter::GetMaxHealth()
+{
+	return GlobalMaxHealth;
+}
+
+void ADarklightProjectCharacter::SetMaxHealth(float HealthPoints)
+{
+	GlobalMaxHealth = HealthPoints;
 }
 
 
