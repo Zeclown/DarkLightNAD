@@ -21,7 +21,7 @@ ADarklightProjectCharacter::ADarklightProjectCharacter()
 	GetCharacterMovement()->GroundFriction = 3.f;
 	GetCharacterMovement()->MaxWalkSpeed = 600.f;
 	GetCharacterMovement()->MaxFlySpeed = 600.f;
-	TrailLenght = 1;
+	TrailLenght = 2.4;
 	bChargedUp = true;
 	PrimaryActorTick.bCanEverTick = true;
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
