@@ -3,6 +3,8 @@
 #include "GameFramework/Character.h"
 #include "DarklightProjectCharacter.generated.h"
 
+DECLARE_EVENT(DarklightProjectCharacter, FPlayerDeath);
+
 UCLASS(config=Game)
 class ADarklightProjectCharacter : public ACharacter
 {
@@ -21,14 +23,17 @@ protected:
 	// End of APawn interface
 	/**Tick event called by the blueprint */
 	void Tick(float deltaTime);
-
+	static FPlayerDeath PlayerDeathEvent;
 	static float GlobalHealth;
 	static float GlobalMaxHealth;
-
+	/* Object Creation Delegate Event */
 
 public:
 	ADarklightProjectCharacter();
 	virtual void BeginPlay();
+
+	FPlayerDeath& OnDeath() { return PlayerDeathEvent; }
+
 	/** Returns SideViewCameraComponent subobject **/
 	FORCEINLINE class UCameraComponent* GetSideViewCameraComponent() const { return SideViewCameraComponent; }
 	/** Returns CameraBoom subobject **/

@@ -2,6 +2,7 @@
 #include "DarklightProjectCharacter.h"
 float ADarklightProjectCharacter::GlobalMaxHealth = 100;
 float ADarklightProjectCharacter::GlobalHealth = GlobalMaxHealth;
+FPlayerDeath ADarklightProjectCharacter::PlayerDeathEvent;
 ADarklightProjectCharacter::ADarklightProjectCharacter()
 {
 	// Set size for collision capsule
@@ -68,6 +69,10 @@ float ADarklightProjectCharacter::GetHealth()
 void ADarklightProjectCharacter::SetHealth(float HealthPoints)
 {
 	GlobalHealth = FMath::Clamp(HealthPoints,0.0f,GlobalMaxHealth);
+	if (GlobalHealth <= 0)
+	{
+		PlayerDeathEvent.Broadcast();
+	}
 }
 
 float ADarklightProjectCharacter::GetMaxHealth()

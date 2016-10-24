@@ -31,6 +31,8 @@ public:
 	/** The maximum distance where two trails are considered to be intersecting*/
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Trail Algorythm")
 	float TrailDistanceTolerance;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Trail Algorythm")
+	bool bDebugTrail;
 
 };
 

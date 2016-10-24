@@ -11,7 +11,7 @@ ADarklightProjectGameMode::ADarklightProjectGameMode()
 	TrailQueryRate = 0.05f;
 	SegmentsToSkip = 0;
 	TrailDistanceTolerance = 15;
-
+	bDebugTrail = false;
 }
 void ADarklightProjectGameMode::BeginPlay()
 {
@@ -35,20 +35,22 @@ void ADarklightProjectGameMode::CheckTrailCollisions()
 	/***********************************************************
 						Debug
 	**************************************************************/
-	for(int i =0;i<SavedPoints.Num();i++)
-		for (int j = 0; j < SavedPoints[i].Num(); j++)
-		{
-			DrawDebugPoint(
-				GetWorld(),
-				SavedPoints[i][j],
-				4,  					//size
-				FColor(i*255, 0, 255),  //pink
-				false,  				
-				TrailQueryRate				
-			);
-		}
+	if (bDebugTrail)
+	{
+		for (int i = 0; i < SavedPoints.Num(); i++)
+			for (int j = 0; j < SavedPoints[i].Num(); j++)
+			{
+				DrawDebugPoint(
+					GetWorld(),
+					SavedPoints[i][j],
+					4,  					//size
+					FColor(i * 255, 0, 255),  //pink
+					false,
+					TrailQueryRate
+				);
+			}
 
-
+	}
 
 	//We clean up every expired positions
 	for (int i = 0; i < Players.Num(); i++)
