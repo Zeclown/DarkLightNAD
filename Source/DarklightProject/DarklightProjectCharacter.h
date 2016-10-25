@@ -18,17 +18,16 @@ class ADarklightProjectCharacter : public ACharacter
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
 protected:
-	// APawn interface
-	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override ;
-	// End of APawn interface
-	/**Tick event called by the blueprint */
-	void Tick(float deltaTime);
+
 	static FPlayerDeath PlayerDeathEvent;
 	static float GlobalHealth;
 	static float GlobalMaxHealth;
-	UPROPERTY(VisibleAnywhere,BlueprintReadWrite,Category="Character Movement")
+	UPROPERTY(VisibleAnywhere,BlueprintReadWrite,Category="Character Movement: Walking")
 	bool bSprinting;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Character Movement: Walking")
+	float SprintModifier;
 	/* Object Creation Delegate Event */
+
 
 public:
 	ADarklightProjectCharacter();
@@ -40,10 +39,6 @@ public:
 	FORCEINLINE class UCameraComponent* GetSideViewCameraComponent() const { return SideViewCameraComponent; }
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
-	/** Called for front to back input*/
-	void MoveForward(float Val);
-	/** Called for side to side input */
-	void MoveRight(float Val);
 	//The duration each position the player passes stay saved in the trail algorythm in seconds
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Trail")
 	float TrailLenght;

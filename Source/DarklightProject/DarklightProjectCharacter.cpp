@@ -22,6 +22,7 @@ ADarklightProjectCharacter::ADarklightProjectCharacter()
 	GetCharacterMovement()->MaxWalkSpeed = 600.f;
 	GetCharacterMovement()->MaxFlySpeed = 600.f;
 	bSprinting = false;
+	SprintModifier = 1.6;
 	TrailLenght = 2.4;
 	bChargedUp = true;
 	PrimaryActorTick.bCanEverTick = true;
@@ -35,25 +36,6 @@ void ADarklightProjectCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
-}
-void ADarklightProjectCharacter::SetupPlayerInputComponent(class UInputComponent* InputComponent)
-{
-	
-}
-void ADarklightProjectCharacter::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-}
-
-void ADarklightProjectCharacter::MoveForward(float Value)
-{
-	AddMovementInput(FVector(1.f, 0.f, 0.f), Value);
-}
-
-void ADarklightProjectCharacter::MoveRight(float Value)
-{
-	// add movement in that direction
-	AddMovementInput(FVector(0.f, 1.f, 0.f), Value);
 }
 
 float ADarklightProjectCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser)
