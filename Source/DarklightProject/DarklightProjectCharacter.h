@@ -26,6 +26,8 @@ protected:
 	static FPlayerDeath PlayerDeathEvent;
 	static float GlobalHealth;
 	static float GlobalMaxHealth;
+	UPROPERTY(VisibleAnywhere,BlueprintReadWrite,Category="Character Movement")
+	bool bSprinting;
 	/* Object Creation Delegate Event */
 
 public:

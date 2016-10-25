@@ -21,6 +21,7 @@ ADarklightProjectCharacter::ADarklightProjectCharacter()
 	GetCharacterMovement()->GroundFriction = 3.f;
 	GetCharacterMovement()->MaxWalkSpeed = 600.f;
 	GetCharacterMovement()->MaxFlySpeed = 600.f;
+	bSprinting = false;
 	TrailLenght = 2.4;
 	bChargedUp = true;
 	PrimaryActorTick.bCanEverTick = true;
