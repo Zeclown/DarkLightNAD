@@ -25,7 +25,9 @@ protected:
 	UPROPERTY(VisibleAnywhere,BlueprintReadWrite,Category="Character Movement: Walking")
 	bool bSprinting;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Character Movement: Walking")
-	float SprintModifier;
+	float MaxSprintSpeed;
+	UPROPERTY(BlueprintReadOnly, Category = "Character Movement: Walking")
+	float DefaultMaxWalkSpeed;
 	/* Object Creation Delegate Event */
 
 
