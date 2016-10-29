@@ -12,12 +12,18 @@ ADarklightProjectGameMode::ADarklightProjectGameMode()
 	SegmentsToSkip = 0;
 	TrailDistanceTolerance = 15;
 	bDebugTrail = false;
+
 }
 void ADarklightProjectGameMode::BeginPlay()
 {
 	Super::BeginPlay();
+	ComboStageIndex = 0;
+	CurrentComboPoints = 0;
 	//Set Timer for  trail collision check
 	GetWorld()->GetTimerManager().SetTimer(TrailCheckTimer, this, &ADarklightProjectGameMode::CheckTrailCollisions, TrailQueryRate, true);
+	//Set the initial timer for combo and pause it until we start a combo
+	GetWorld()->GetTimerManager().SetTimer(ComboCheckTimer, this, &ADarklightProjectGameMode::ResetCombo, ComboTimeWindow<0 ? 0 : ComboTimeWindow, false);
+	GetWorld()->GetTimerManager().PauseTimer(ComboCheckTimer);
 	//Find players in game
 	for (TObjectIterator<ADarklightProjectCharacter> Itr; Itr; ++Itr)
 	{
@@ -28,6 +34,22 @@ void ADarklightProjectGameMode::BeginPlay()
 		Players.Add(*Itr);
 		PlayersTrailTimers.Add((*Itr)->TrailLenght);
 		SavedPoints.Add(TArray<FVector>());
+	}
+}
+void ADarklightProjectGameMode::ResetCombo()
+{
+	CurrentComboPoints = 0;
+	ActiveComboModifier = 0;
+	ComboStageIndex = 0;
+}
+void ADarklightProjectGameMode::AddComboPoint()
+{
+	CurrentComboPoints++;
+	//Can we get to the next stage?
+	if (ComboStageIndex < ComboStages.Num() && CurrentComboPoints >= ComboStages[ComboStageIndex + 1].MinimumComboPoints)
+	{
+		ComboStageIndex++;
+		ActiveComboModifier += ActiveComboModifier*ComboStages[ComboStageIndex + 1].ComboModifier;
 	}
 }
 void ADarklightProjectGameMode::CheckTrailCollisions()
@@ -51,7 +73,10 @@ void ADarklightProjectGameMode::CheckTrailCollisions()
 			}
 
 	}
-
+	if (bDebugCombo)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("DEBUG: Combo Points:%f , Combo Level:%f"),CurrentComboPoints,ComboStageIndex);
+	}
 	//We clean up every expired positions
 	for (int i = 0; i < Players.Num(); i++)
 	{
@@ -100,12 +125,16 @@ void ADarklightProjectGameMode::CheckTrailCollisions()
 						{
 							//We spawn a collision and disable the player future collisions until he doesnt create collisions anymore
 							FVector ContactPoint = (NearestPointCompared + NearestPointCurrent) / 2;
-							
+							//Is it a normal time window or based on bombs
+							if (ComboTimeWindow >= 0)
+							{
+								AddComboPoint();
+								//Reset the timer and starts it
+								GetWorld()->GetTimerManager().ClearTimer(ComboCheckTimer);
+								GetWorld()->GetTimerManager().UnPauseTimer(ComboCheckTimer);
+							}
+							//else we need the Bomb, handling it on BP side
 							HandleTrailCollision(ContactPoint);
-							//DrawDebugSphere(GetWorld(), ContactPoint, 40, 5, FColor(255, 0, 0), false, 3);
-							////UE_LOG(LogTemp, Warning, TEXT("Collision!!Vector : (%f,%f,%f),(%f,%f,%f) nearest(%f,%f,%f)"), SavedPoints[PlayerComparedIndex][PointComparedIndex].X, SavedPoints[PlayerComparedIndex][PointComparedIndex].Y, SavedPoints[PlayerComparedIndex][PointComparedIndex].Z, SavedPoints[PlayerComparedIndex][PointComparedIndex + 1].X, SavedPoints[PlayerComparedIndex][PointComparedIndex + 1].Y, SavedPoints[PlayerComparedIndex][PointComparedIndex + 1].Z, NearestPointCompared.X, NearestPointCompared.Y, NearestPointCompared.Z);
-							////UE_LOG(LogTemp, Warning, TEXT("Vector : (%f,%f,%f),(%f,%f,%f) nearest(%f,%f,%f)"), LastPositionSaved.X, LastPositionSaved.Y, LastPositionSaved.Z, NewPosition.X, NewPosition.Y, NewPosition.Z, NearestPointCurrent.X, NearestPointCurrent.Y, NearestPointCurrent.Z);
-							////UE_LOG(LogTemp, Warning, TEXT("Distance Between Points %f"), FVector::Dist(NearestPointCompared, NearestPointCurrent));
 						}
 						bChargeUsed = true;
 						break;
