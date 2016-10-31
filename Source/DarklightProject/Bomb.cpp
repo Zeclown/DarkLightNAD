@@ -7,9 +7,9 @@
 // Sets default values
 ABomb::ABomb()
 {
-	Radius = 10;
+	Radius = 100;
 	TimeBeforeExplosion = 1;
-	Damage = 1;
+	Damage = 100;
 }
 
 // Called when the game starts or when spawned
