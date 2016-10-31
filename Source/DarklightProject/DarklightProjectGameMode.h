@@ -3,7 +3,6 @@
 #include "GameFramework/GameMode.h"
 #include "DarklightProjectCharacter.h"
 #include "DarklightProjectGameMode.generated.h"
-
 USTRUCT(BlueprintType)
 struct FComboLevel
 {
@@ -19,8 +18,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combo Stats")
 	float ComboModifier;
 };
+
 UCLASS(ABSTRACT)
-class ADarklightProjectGameMode : public AGameMode
+class DARKLIGHTPROJECT_API ADarklightProjectGameMode : public AGameMode
 {
 	GENERATED_BODY()
 protected:
@@ -35,25 +35,26 @@ protected:
 	TArray<ADarklightProjectCharacter*> Players;
 	TArray<float> PlayersTrailTimers;
 	//The number of combo points (Consecutive bombs created)
-	UPROPERTY(VisibleAnywhere, Category = "Combo Mechanic")
+	UPROPERTY(VisibleAnywhere,BlueprintReadOnly, Category = "Combo Mechanic")
 	int CurrentComboPoints;
 	//The current combo level
-	UPROPERTY(VisibleAnywhere, Category = "Combo Mechanic")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly,Category = "Combo Mechanic")
 	int ComboStageIndex;
-	UPROPERTY(VisibleAnywhere, Category = "Combo Mechanic")
-	int ActiveComboModifier;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Combo Mechanic")
+	float ActiveComboModifier;
 	//The number of bomb currently in game
 	int BombCount;
 
 public:
 	ADarklightProjectGameMode();
 	virtual void BeginPlay() override;
-	UFUNCTION(BlueprintImplementableEvent, Category = "Trail Algorythm")
-	void HandleTrailCollision(FVector ContactPoint);
+	UFUNCTION(BlueprintNativeEvent, Category = "Trail Algorythm")
+	void HandleTrailCollision(FVector ContactPoint,ADarklightProjectCharacter* Bomber);
 	//Function called by timer that reset the combo level and points of the player
 	void ResetCombo();
 	//Function called when a bomb is destroyed (so we can track the number of bomb currently in game)
-	void SignalBombDestruction();
+	UFUNCTION()
+	void SignalBombDestruction(AActor* DestroyedBomb);
 	//Function called when a combo point is added which check if we are at a new combo level
 	void AddComboPoint();
 	/** How many time passes between trail collision checks in seconds. Shorter time means collision detection is more accurate but also more costly */

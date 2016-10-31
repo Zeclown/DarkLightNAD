@@ -5,13 +5,17 @@
 #include "DrawDebugHelpers.h"
 #include "Engine.h"
 #include "Engine/Blueprint.h"
-
+#include "DarklightProject/Bomb.h"
 ADarklightProjectGameMode::ADarklightProjectGameMode()
 {
 	TrailQueryRate = 0.05f;
 	SegmentsToSkip = 0;
-	TrailDistanceTolerance = 15;
+	TrailDistanceTolerance = 5;
 	bDebugTrail = false;
+	FComboLevel MinimumLevel = FComboLevel();
+	MinimumLevel.ComboModifier = 0;
+	MinimumLevel.MinimumComboPoints = 0;
+	ComboStages.Add(MinimumLevel);
 
 }
 void ADarklightProjectGameMode::BeginPlay()
@@ -22,9 +26,6 @@ void ADarklightProjectGameMode::BeginPlay()
 	CurrentComboPoints = 0;
 	//Set Timer for  trail collision check
 	GetWorld()->GetTimerManager().SetTimer(TrailCheckTimer, this, &ADarklightProjectGameMode::CheckTrailCollisions, TrailQueryRate, true);
-	//Set the initial timer for combo and pause it until we start a combo
-	GetWorld()->GetTimerManager().SetTimer(ComboCheckTimer, this, &ADarklightProjectGameMode::ResetCombo, ComboTimeWindow<0 ? 0 : ComboTimeWindow, false);
-	GetWorld()->GetTimerManager().PauseTimer(ComboCheckTimer);
 	//Find players in game
 	for (TObjectIterator<ADarklightProjectCharacter> Itr; Itr; ++Itr)
 	{
@@ -37,13 +38,14 @@ void ADarklightProjectGameMode::BeginPlay()
 		SavedPoints.Add(TArray<FVector>());
 	}
 }
+
 void ADarklightProjectGameMode::ResetCombo()
 {
 	CurrentComboPoints = 0;
 	ActiveComboModifier = 0;
 	ComboStageIndex = 0;
 }
-void ADarklightProjectGameMode::SignalBombDestruction()
+void ADarklightProjectGameMode::SignalBombDestruction(AActor* DestroyedBomb)
 {
 	BombCount--;
 	//are we using bomb duration as the combo time window?
@@ -52,14 +54,20 @@ void ADarklightProjectGameMode::SignalBombDestruction()
 		ResetCombo();
 	}
 }
+void ADarklightProjectGameMode::HandleTrailCollision_Implementation(FVector ContactPoint, ADarklightProjectCharacter* Bomber)
+{
+	ABomb* NewBomb = GetWorld()->SpawnActor<ABomb>(Bomber->CurrentBomb, ContactPoint, FRotator::ZeroRotator);
+	NewBomb->ReceiveModifier(ActiveComboModifier);
+	NewBomb->OnDestroyed.AddDynamic(this, &ADarklightProjectGameMode::SignalBombDestruction);
+}
 void ADarklightProjectGameMode::AddComboPoint()
 {
 	CurrentComboPoints++;
 	//Can we get to the next stage?
-	if (ComboStageIndex < ComboStages.Num() && CurrentComboPoints >= ComboStages[ComboStageIndex + 1].MinimumComboPoints)
+	if (ComboStageIndex+1 < ComboStages.Num() && CurrentComboPoints >= ComboStages[ComboStageIndex + 1].MinimumComboPoints)
 	{
+		ActiveComboModifier += ComboStages[ComboStageIndex + 1].ComboModifier;
 		ComboStageIndex++;
-		ActiveComboModifier += ActiveComboModifier*ComboStages[ComboStageIndex + 1].ComboModifier;
 	}
 }
 void ADarklightProjectGameMode::CheckTrailCollisions()
@@ -135,16 +143,16 @@ void ADarklightProjectGameMode::CheckTrailCollisions()
 						{
 							//We spawn a collision and disable the player future collisions until he doesnt create collisions anymore
 							FVector ContactPoint = (NearestPointCompared + NearestPointCurrent) / 2;
+							AddComboPoint();
 							//Is it a normal time window or based on bombs
 							if (ComboTimeWindow >= 0)
 							{
-								AddComboPoint();
 								//Reset the timer and starts it
 								GetWorld()->GetTimerManager().ClearTimer(ComboCheckTimer);
-								GetWorld()->GetTimerManager().UnPauseTimer(ComboCheckTimer);
+								GetWorld()->GetTimerManager().SetTimer(ComboCheckTimer, this, &ADarklightProjectGameMode::ResetCombo, ComboTimeWindow, false);
 							}
 							//else the bomb will signal its destruction to us and we will see if we reset the combo then
-							HandleTrailCollision(ContactPoint);
+							HandleTrailCollision(ContactPoint,Players[PlayerComparedIndex]);
 							BombCount++;
 						}
 						bChargeUsed = true;

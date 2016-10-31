@@ -19,6 +19,8 @@ public:
 
 	// Called when the game starts or when spawned
 	void BeginPlay() override;
+	UFUNCTION(BlueprintCallable, Category = "Bomb Mechanism")
+	void ReceiveModifier(float Modifier);
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Bomb Mechanism")
 	float Radius;
 	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = "Bomb Mechanism")

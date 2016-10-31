@@ -26,6 +26,12 @@ ADarklightProjectCharacter::ADarklightProjectCharacter()
 	TrailLenght = 2.4;
 	bChargedUp = true;
 	PrimaryActorTick.bCanEverTick = true;
+	static ConstructorHelpers::FClassFinder<AActor> BombBP(TEXT("/Game/Bombs/MaBombe"));
+	if (BombBP.Succeeded())
+	{
+		CurrentBomb = *BombBP.Class;
+	}
+
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
 

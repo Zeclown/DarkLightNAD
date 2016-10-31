@@ -57,5 +57,6 @@ public:
 	static float GetMaxHealth();
 	UFUNCTION(BlueprintCallable, Category = "Player State")
 	static void SetMaxHealth(float HealthPoints);
-
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Trail")
+	TSubclassOf<class ABomb> CurrentBomb;
 };
