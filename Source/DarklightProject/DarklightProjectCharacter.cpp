@@ -46,12 +46,13 @@ void ADarklightProjectCharacter::BeginPlay()
 
 float ADarklightProjectCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser)
 {
-	GlobalHealth -= DamageAmount;
+	const float ActualDamage = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
+	GlobalHealth -= ActualDamage;
 	if (GlobalHealth <= 0)
 	{
 		PlayerDeathEvent.Broadcast();
 	}
-	return DamageAmount;
+	return ActualDamage;
 }
 
 float ADarklightProjectCharacter::GetHealth()

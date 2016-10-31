@@ -24,7 +24,11 @@ public:
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Bomb Mechanism")
 	float Radius;
 	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = "Bomb Mechanism")
-	float Damage;
+	float BaseDamage;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bomb Mechanism")
+	float MinDamage;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bomb Mechanism")
+	float DamageInnerRadius;
 	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = "Bomb Mechanism", meta = (ClampMin = 0.001f))
 	float TimeBeforeExplosion;
 	FTimerHandle ExplosionHandle;

@@ -9,7 +9,9 @@ ABomb::ABomb()
 {
 	Radius = 100;
 	TimeBeforeExplosion = 1;
-	Damage = 10;
+	BaseDamage = 100;
+	MinDamage = 30;
+	DamageInnerRadius = 30;
 }
 
 // Called when the game starts or when spawned
@@ -21,7 +23,7 @@ void ABomb::BeginPlay()
 
 void ABomb::ReceiveModifier(float Modifier)
 {
-	Damage += Damage*Modifier;
+	BaseDamage += BaseDamage*Modifier;
 	Radius += Radius*Modifier;
 }
 
