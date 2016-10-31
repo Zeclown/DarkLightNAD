@@ -9,7 +9,9 @@ ABomb::ABomb()
 {
 	Radius = 100;
 	TimeBeforeExplosion = 1;
-	Damage = 100;
+	BaseDamage = 100;
+	MinDamage = 30;
+	DamageInnerRadius = 30;
 }
 
 // Called when the game starts or when spawned
