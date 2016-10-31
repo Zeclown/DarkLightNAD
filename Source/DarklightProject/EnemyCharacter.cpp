@@ -21,12 +21,13 @@ void AEnemyCharacter::BeginPlay()
 
 float AEnemyCharacter::TakeDamage(float DamageAmount, FDamageEvent const & DamageEvent, AController * EventInstigator, AActor * DamageCauser)
 {
-	HealthPoint -= DamageAmount;
+	const float ActualDamage = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
+	HealthPoint -= ActualDamage;
 	if (HealthPoint <= 0)
 	{
 		bDead = true;
 	}
-	return DamageAmount;
+	return ActualDamage;
 }
 
 

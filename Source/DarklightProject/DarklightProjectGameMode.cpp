@@ -17,6 +17,7 @@ ADarklightProjectGameMode::ADarklightProjectGameMode()
 void ADarklightProjectGameMode::BeginPlay()
 {
 	Super::BeginPlay();
+	BombCount = 0;
 	ComboStageIndex = 0;
 	CurrentComboPoints = 0;
 	//Set Timer for  trail collision check
@@ -41,6 +42,15 @@ void ADarklightProjectGameMode::ResetCombo()
 	CurrentComboPoints = 0;
 	ActiveComboModifier = 0;
 	ComboStageIndex = 0;
+}
+void ADarklightProjectGameMode::SignalBombDestruction()
+{
+	BombCount--;
+	//are we using bomb duration as the combo time window?
+	if (BombCount == 0 && ComboTimeWindow<0)
+	{
+		ResetCombo();
+	}
 }
 void ADarklightProjectGameMode::AddComboPoint()
 {
@@ -133,8 +143,9 @@ void ADarklightProjectGameMode::CheckTrailCollisions()
 								GetWorld()->GetTimerManager().ClearTimer(ComboCheckTimer);
 								GetWorld()->GetTimerManager().UnPauseTimer(ComboCheckTimer);
 							}
-							//else we need the Bomb, handling it on BP side
+							//else the bomb will signal its destruction to us and we will see if we reset the combo then
 							HandleTrailCollision(ContactPoint);
+							BombCount++;
 						}
 						bChargeUsed = true;
 						break;

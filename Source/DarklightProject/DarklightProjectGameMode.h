@@ -42,6 +42,8 @@ protected:
 	int ComboStageIndex;
 	UPROPERTY(VisibleAnywhere, Category = "Combo Mechanic")
 	int ActiveComboModifier;
+	//The number of bomb currently in game
+	int BombCount;
 
 public:
 	ADarklightProjectGameMode();
@@ -50,6 +52,8 @@ public:
 	void HandleTrailCollision(FVector ContactPoint);
 	//Function called by timer that reset the combo level and points of the player
 	void ResetCombo();
+	//Function called when a bomb is destroyed (so we can track the number of bomb currently in game)
+	void SignalBombDestruction();
 	//Function called when a combo point is added which check if we are at a new combo level
 	void AddComboPoint();
 	/** How many time passes between trail collision checks in seconds. Shorter time means collision detection is more accurate but also more costly */
