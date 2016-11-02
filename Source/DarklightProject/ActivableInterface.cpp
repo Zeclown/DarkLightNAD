@@ -4,5 +4,3 @@
 #include "ActivableInterface.h"
 
 UActivableInterface::UActivableInterface(const class FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) { }
-
-

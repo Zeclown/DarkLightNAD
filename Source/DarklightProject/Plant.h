@@ -15,8 +15,11 @@ class DARKLIGHTPROJECT_API APlant : public AActor,public IActivableInterface
 public:	
 	// Sets default values for this actor's properties
 	APlant();
-
 	// Called when the game starts or when spawned
 	 void BeginPlay() override;
-	
+	 virtual bool Activate_Implementation(ABomb * Activator) override;
+	 //Is the plant already activated
+	 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Plant")
+	bool bActivated;
+
 };

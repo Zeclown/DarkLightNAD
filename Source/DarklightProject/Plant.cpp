@@ -17,5 +17,11 @@ void APlant::BeginPlay()
 	
 }
 
+bool APlant::Activate_Implementation(ABomb * Activator)
+{
+	bActivated = true;
+	return true;
+}
+
 
 

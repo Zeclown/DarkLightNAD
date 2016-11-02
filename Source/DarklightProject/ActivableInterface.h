@@ -7,7 +7,7 @@
 /**
  * 
  */
-UINTERFACE(Blueprintable)
+UINTERFACE(BlueprintType)
 class DARKLIGHTPROJECT_API UActivableInterface : public UInterface
 {
 	GENERATED_UINTERFACE_BODY()
@@ -15,7 +15,7 @@ class DARKLIGHTPROJECT_API UActivableInterface : public UInterface
 class DARKLIGHTPROJECT_API IActivableInterface {
 	GENERATED_IINTERFACE_BODY()
 public:
-	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Activable")
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Activable")
 	bool Activate(ABomb* Activator);
 
 };
