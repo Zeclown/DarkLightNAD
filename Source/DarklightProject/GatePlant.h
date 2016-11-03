@@ -13,9 +13,12 @@ class DARKLIGHTPROJECT_API AGatePlant : public APlant
 {
 	GENERATED_BODY()
 protected:
+	void BeginPlay() override;
+	UFUNCTION()
+	void SignalBudActivation();
 	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,Category="Plant")
-	TArray<TSubclassOf<APlant>> Buds;
-
+	TArray<APlant*> Buds;
+	int BudsActivated;
 	
 	
 	

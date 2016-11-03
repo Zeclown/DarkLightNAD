@@ -6,12 +6,13 @@
 #include "GameFramework/Actor.h"
 #include "ActivableInterface.h"
 #include "Plant.generated.h"
-
+DECLARE_EVENT(APlant, FPlantActivated);
 UCLASS(ABSTRACT)
 class DARKLIGHTPROJECT_API APlant : public AActor,public IActivableInterface
 {
 	GENERATED_BODY()
-	
+protected:
+	FPlantActivated PlantActivatedEvent;
 public:	
 	// Sets default values for this actor's properties
 	APlant();
@@ -21,5 +22,6 @@ public:
 	 //Is the plant already activated
 	 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Plant")
 	bool bActivated;
+	 FPlantActivated& OnPlantActivate() { return PlantActivatedEvent; }
 
 };
