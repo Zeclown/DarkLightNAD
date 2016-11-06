@@ -22,6 +22,9 @@ public:
 	 //Is the plant already activated
 	 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Plant")
 	bool bActivated;
+	 //The number of explosions required to activate this plant
+	 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Plant",meta= (ClampMin = 1))
+	int HitsToActivate;
 	 FPlantActivated& OnPlantActivate() { return PlantActivatedEvent; }
 
 };

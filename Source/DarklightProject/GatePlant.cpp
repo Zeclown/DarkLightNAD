@@ -23,6 +23,14 @@ void AGatePlant::SignalBudActivation()
 		Activate_Implementation(nullptr);
 	}
 }
+bool AGatePlant::Activate_Implementation(ABomb* Activator)
+{
+	if (!Activator)//The plant was activated by itself
+	{
+		return Super::Activate_Implementation(Activator);
+	}
+	return false;
+}
 
 
 

@@ -14,6 +14,7 @@ class DARKLIGHTPROJECT_API AGatePlant : public APlant
 	GENERATED_BODY()
 protected:
 	void BeginPlay() override;
+	virtual bool Activate_Implementation(ABomb * Activator) override;
 	UFUNCTION()
 	void SignalBudActivation();
 	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,Category="Plant")
