@@ -7,20 +7,27 @@
 // Sets default values
 APlant::APlant()
 {
-
+	HitsToActivate = 1;
 }
 
 // Called when the game starts or when spawned
 void APlant::BeginPlay()
 {
 	Super::BeginPlay();
+	HitCounter = HitsToActivate;
 	
 }
 
 bool APlant::Activate_Implementation(ABomb * Activator)
 {
-	bActivated = true;
-	return true;
+	HitCounter--;
+	if (HitCounter <= 0)
+	{
+		bActivated = true;
+		PlantActivatedEvent.Broadcast();
+		return true;
+	}
+	return false;
 }
 
 
