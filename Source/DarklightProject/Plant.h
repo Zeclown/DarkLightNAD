@@ -13,6 +13,8 @@ class DARKLIGHTPROJECT_API APlant : public AActor,public IActivableInterface
 	GENERATED_BODY()
 protected:
 	FPlantActivated PlantActivatedEvent;
+	//The number of explosion that hit this plant
+	int HitCounter;
 public:	
 	// Sets default values for this actor's properties
 	APlant();

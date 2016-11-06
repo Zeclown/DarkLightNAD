@@ -14,14 +14,20 @@ APlant::APlant()
 void APlant::BeginPlay()
 {
 	Super::BeginPlay();
+	HitCounter = HitsToActivate;
 	
 }
 
 bool APlant::Activate_Implementation(ABomb * Activator)
 {
-	bActivated = true;
-	PlantActivatedEvent.Broadcast();
-	return true;
+	HitCounter--;
+	if (HitCounter <= 0)
+	{
+		bActivated = true;
+		PlantActivatedEvent.Broadcast();
+		return true;
+	}
+	return false;
 }
 
 

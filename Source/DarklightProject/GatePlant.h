@@ -17,7 +17,7 @@ protected:
 	virtual bool Activate_Implementation(ABomb * Activator) override;
 	UFUNCTION()
 	void SignalBudActivation();
-	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,Category="Plant")
+	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category="Plant")
 	TArray<APlant*> Buds;
 	int BudsActivated;
 	
