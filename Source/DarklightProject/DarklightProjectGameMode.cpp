@@ -33,8 +33,7 @@ void ADarklightProjectGameMode::BeginPlay()
 			continue;
 		}
 		Players.Add(*Itr);
-		PlayersTrailTimers.Add((*Itr)->TrailLenght);
-		SavedPoints.Add(TArray<FVector>());
+		SavedPoints.Add(TArray<FTrailPoint>());
 	}
 }
 
@@ -90,7 +89,7 @@ void ADarklightProjectGameMode::CheckTrailCollisions()
 			{
 				DrawDebugPoint(
 					GetWorld(),
-					SavedPoints[i][j],
+					SavedPoints[i][j].Location,
 					4,  					//size
 					FColor(i * 255, 0, 255),  //pink
 					false,
@@ -104,16 +103,16 @@ void ADarklightProjectGameMode::CheckTrailCollisions()
 		UE_LOG(LogTemp, Warning, TEXT("DEBUG: Combo Points:%f , Combo Level:%f"),CurrentComboPoints,ComboStageIndex);
 	}
 	//We clean up every expired positions
+	float TimeSeconds = GetWorld()->TimeSeconds;
 	for (int i = 0; i < Players.Num(); i++)
 	{
-		if (PlayersTrailTimers[i] > 0)
+		for (int j = 0; j < SavedPoints[i].Num(); j++)
 		{
-			PlayersTrailTimers[i] -= TrailQueryRate;
-		}
-		else
-		{
-			//We add the seconds that were stored in the player timer to the query rate
-			SavedPoints[i].RemoveAt(0, 1);
+			if (SavedPoints[i][j].ExpirationTime < TimeSeconds)
+			{
+				SavedPoints[i].RemoveAt(j);
+				j--;
+			}
 		}
 
 	}
@@ -121,14 +120,17 @@ void ADarklightProjectGameMode::CheckTrailCollisions()
 	for (int CurrentPlayerIndex = 0; CurrentPlayerIndex < Players.Num(); ++CurrentPlayerIndex)
 	{
 		FVector NewPosition = Players[CurrentPlayerIndex]->GetActorLocation();
-		SavedPoints[CurrentPlayerIndex].Add(NewPosition);
+		FTrailPoint NewPoint;
+		NewPoint.Location = NewPosition;
+		NewPoint.ExpirationTime = GetWorld()->TimeSeconds + Players[CurrentPlayerIndex]->TrailLenght;
+		SavedPoints[CurrentPlayerIndex].Add(NewPoint);
 		//If an explosion occurs, the charge will be used, else it will be given to the player so it can produce explosions again if he was discharged before
 		bool bChargeUsed=false;
 		//We need at least two points to make a segment. 
 		if (SavedPoints[CurrentPlayerIndex].Num() > 1)
 		{
 			//We take the last position saved before the NewPosition we just added
-			FVector LastPositionSaved = SavedPoints[CurrentPlayerIndex][SavedPoints[CurrentPlayerIndex].Num() - 2];
+			FVector LastPositionSaved = SavedPoints[CurrentPlayerIndex][SavedPoints[CurrentPlayerIndex].Num() - 2].Location;
 			//We compare this new segment to every location saved by other players
 			for (int PlayerComparedIndex = 0; PlayerComparedIndex < SavedPoints.Num() && !bChargeUsed; ++PlayerComparedIndex)
 			{
@@ -142,7 +144,7 @@ void ADarklightProjectGameMode::CheckTrailCollisions()
 
 					FVector NearestPointCompared, NearestPointCurrent;
 					//We store the nearest points on the new segment and the compared segment and check if they are close enough for a collision
-					FMath::SegmentDistToSegment(SavedPoints[PlayerComparedIndex][PointComparedIndex], SavedPoints[PlayerComparedIndex][PointComparedIndex + 1]
+					FMath::SegmentDistToSegment(SavedPoints[PlayerComparedIndex][PointComparedIndex].Location, SavedPoints[PlayerComparedIndex][PointComparedIndex + 1].Location
 						, LastPositionSaved, NewPosition, NearestPointCompared, NearestPointCurrent);
 					if (FVector::Dist(NearestPointCompared, NearestPointCurrent) <= TrailDistanceTolerance)
 					{
