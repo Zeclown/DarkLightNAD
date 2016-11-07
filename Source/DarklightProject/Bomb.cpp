@@ -2,7 +2,7 @@
 
 #include "DarklightProject.h"
 #include "Bomb.h"
-
+#include "DarklightProjectGameMode.h"
 
 // Sets default values
 ABomb::ABomb()
@@ -21,10 +21,12 @@ void ABomb::BeginPlay()
 	GetWorld()->GetTimerManager().SetTimer(ExplosionHandle,this,&ABomb::Explode, TimeBeforeExplosion, false, TimeBeforeExplosion);
 }
 
-void ABomb::ReceiveModifier(float Modifier)
+void ABomb::ReceiveModifier(FComboLevel Modifier)
 {
-	BaseDamage += BaseDamage*Modifier;
-	Radius += Radius*Modifier;
+	BaseDamage += BaseDamage*Modifier.ComboModifier;
+	Radius += Radius*Modifier.ComboModifier;
+	UParticleSystemComponent* PS= FindComponentByClass<UParticleSystemComponent>();
+	PS->Template = Modifier.ParticleSystem;
 }
 
 

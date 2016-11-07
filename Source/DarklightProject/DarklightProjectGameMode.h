@@ -2,6 +2,7 @@
 #pragma once
 #include "GameFramework/GameMode.h"
 #include "DarklightProjectCharacter.h"
+#include "ParticleDefinitions.h"
 #include "DarklightProjectGameMode.generated.h"
 //Structure representing a combo level a player can achieve after a number of combo points
 USTRUCT(BlueprintType)
@@ -18,6 +19,9 @@ public:
 	*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combo Stats")
 	float ComboModifier;
+	//If left empty , will fallback to the older particle system
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combo Stats")
+	UParticleSystem* ParticleSystem;
 };
 //Structure representing a point in a player's trail
 USTRUCT(BlueprintType)

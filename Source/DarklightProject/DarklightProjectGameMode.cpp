@@ -55,7 +55,7 @@ void ADarklightProjectGameMode::SignalBombDestruction(AActor* DestroyedBomb)
 void ADarklightProjectGameMode::HandleTrailCollision_Implementation(FVector ContactPoint, ADarklightProjectCharacter* Bomber)
 {
 	ABomb* NewBomb = GetWorld()->SpawnActor<ABomb>(Bomber->CurrentBomb, ContactPoint, FRotator::ZeroRotator);
-	NewBomb->ReceiveModifier(ActiveComboModifier);
+	NewBomb->ReceiveModifier(ComboStages[ComboStageIndex]);
 	NewBomb->OnDestroyed.AddDynamic(this, &ADarklightProjectGameMode::SignalBombDestruction);
 	SpawnedBombs.Add(NewBomb);
 	//We prevent players too close to trigger another explosion
