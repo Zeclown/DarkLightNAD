@@ -43,7 +43,7 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Combo Mechanic")
 	float ActiveComboModifier;
 	//The number of bomb currently in game
-	int BombCount;
+	TArray<ABomb*> SpawnedBombs;
 
 public:
 	ADarklightProjectGameMode();
@@ -73,6 +73,9 @@ public:
 	/** The maximum distance where two trails are considered to be intersecting*/
 	UPROPERTY(EditDefaultsOnly, Category = "Trail Algorythm")
 	float TrailDistanceTolerance;
+	//If characters are within this distance from each other, their bombs will be combined into a single bomb
+	UPROPERTY(EditDefaultsOnly, Category = "Trail Algorythm")
+	float MinimumBombDistance;
 	UPROPERTY(EditDefaultsOnly, Category = "Trail Algorythm")
 	bool bDebugTrail;
 	UPROPERTY(EditDefaultsOnly, Category = "Trail Algorythm")

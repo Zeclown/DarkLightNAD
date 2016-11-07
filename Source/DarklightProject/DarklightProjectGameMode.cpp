@@ -10,18 +10,17 @@ ADarklightProjectGameMode::ADarklightProjectGameMode()
 {
 	TrailQueryRate = 0.05f;
 	SegmentsToSkip = 0;
-	TrailDistanceTolerance = 5;
+	TrailDistanceTolerance = 20;
 	bDebugTrail = false;
 	FComboLevel MinimumLevel = FComboLevel();
 	MinimumLevel.ComboModifier = 0;
 	MinimumLevel.MinimumComboPoints = 0;
 	ComboStages.Add(MinimumLevel);
-
+	MinimumBombDistance = 15;
 }
 void ADarklightProjectGameMode::BeginPlay()
 {
 	Super::BeginPlay();
-	BombCount = 0;
 	ComboStageIndex = 0;
 	CurrentComboPoints = 0;
 	//Set Timer for  trail collision check
@@ -47,9 +46,9 @@ void ADarklightProjectGameMode::ResetCombo()
 }
 void ADarklightProjectGameMode::SignalBombDestruction(AActor* DestroyedBomb)
 {
-	BombCount--;
+	SpawnedBombs.Remove(Cast<ABomb>(DestroyedBomb));
 	//are we using bomb duration as the combo time window?
-	if (BombCount == 0 && ComboTimeWindow<0)
+	if (SpawnedBombs.Num() == 0 && ComboTimeWindow<0)
 	{
 		ResetCombo();
 	}
@@ -59,6 +58,15 @@ void ADarklightProjectGameMode::HandleTrailCollision_Implementation(FVector Cont
 	ABomb* NewBomb = GetWorld()->SpawnActor<ABomb>(Bomber->CurrentBomb, ContactPoint, FRotator::ZeroRotator);
 	NewBomb->ReceiveModifier(ActiveComboModifier);
 	NewBomb->OnDestroyed.AddDynamic(this, &ADarklightProjectGameMode::SignalBombDestruction);
+	SpawnedBombs.Add(NewBomb);
+	//We prevent players too close to trigger another explosion
+	for (ADarklightProjectCharacter* Player : Players)
+	{
+		if (Bomber->GetDistanceTo(Player)<= MinimumBombDistance)
+		{
+			Player->bChargedUp = false;
+		}
+	}
 }
 void ADarklightProjectGameMode::AddComboPoint()
 {
@@ -122,15 +130,16 @@ void ADarklightProjectGameMode::CheckTrailCollisions()
 			//We take the last position saved before the NewPosition we just added
 			FVector LastPositionSaved = SavedPoints[CurrentPlayerIndex][SavedPoints[CurrentPlayerIndex].Num() - 2];
 			//We compare this new segment to every location saved by other players
-			for (int PlayerComparedIndex = 0; PlayerComparedIndex < SavedPoints.Num(); ++PlayerComparedIndex)
+			for (int PlayerComparedIndex = 0; PlayerComparedIndex < SavedPoints.Num() && !bChargeUsed; ++PlayerComparedIndex)
 			{
 				if (PlayerComparedIndex == CurrentPlayerIndex || SavedPoints[PlayerComparedIndex].Num()<2)//we skip the check if its lines from the same players or there isnt a line segment saved for the comparedPlayer
 				{
 					continue;
 				}
 				//We check each segments of the compared player. 3 nested loops, sorry
-				for (int PointComparedIndex = 0; PointComparedIndex+1 < SavedPoints[PlayerComparedIndex].Num(); PointComparedIndex+=2)
+				for (int PointComparedIndex = 0; PointComparedIndex+1 < SavedPoints[PlayerComparedIndex].Num() && !bChargeUsed; PointComparedIndex++)
 				{
+
 					FVector NearestPointCompared, NearestPointCurrent;
 					//We store the nearest points on the new segment and the compared segment and check if they are close enough for a collision
 					FMath::SegmentDistToSegment(SavedPoints[PlayerComparedIndex][PointComparedIndex], SavedPoints[PlayerComparedIndex][PointComparedIndex + 1]
@@ -141,10 +150,11 @@ void ADarklightProjectGameMode::CheckTrailCollisions()
 						//Collision Occured
 						if (Players[CurrentPlayerIndex]->bChargedUp)
 						{
+
 							//We spawn a collision and disable the player future collisions until he doesnt create collisions anymore
 							FVector ContactPoint = (NearestPointCompared + NearestPointCurrent) / 2;
 							AddComboPoint();
-							//Is it a normal time window or based on bombs
+							//Is it a normal time window or based on bombs 
 							if (ComboTimeWindow >= 0)
 							{
 								//Reset the timer and starts it
@@ -153,10 +163,8 @@ void ADarklightProjectGameMode::CheckTrailCollisions()
 							}
 							//else the bomb will signal its destruction to us and we will see if we reset the combo then
 							HandleTrailCollision(ContactPoint,Players[PlayerComparedIndex]);
-							BombCount++;
 						}
 						bChargeUsed = true;
-						break;
 					}
 				}
 			}
