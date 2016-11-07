@@ -3,6 +3,7 @@
 #include "GameFramework/GameMode.h"
 #include "DarklightProjectCharacter.h"
 #include "DarklightProjectGameMode.generated.h"
+//Structure representing a combo level a player can achieve after a number of combo points
 USTRUCT(BlueprintType)
 struct FComboLevel
 {
@@ -18,7 +19,19 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combo Stats")
 	float ComboModifier;
 };
-
+//Structure representing a point in a player's trail
+USTRUCT(BlueprintType)
+struct FTrailPoint
+{
+	GENERATED_BODY()
+public:
+	//The location of the point
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FVector Location;
+	//The time at which the point will be expired
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float ExpirationTime;
+};
 UCLASS(ABSTRACT)
 class DARKLIGHTPROJECT_API ADarklightProjectGameMode : public AGameMode
 {
@@ -26,14 +39,13 @@ class DARKLIGHTPROJECT_API ADarklightProjectGameMode : public AGameMode
 protected:
 	void CheckTrailCollisions();
 	//The position of the players saved
-	TArray<TArray<FVector>> SavedPoints;
+	TArray<TArray<FTrailPoint>> SavedPoints;
 	//The handle of the timer for trail collision checking
 	FTimerHandle TrailCheckTimer;
 	//The handle of the timer for combo checking
 	FTimerHandle ComboCheckTimer;
 
 	TArray<ADarklightProjectCharacter*> Players;
-	TArray<float> PlayersTrailTimers;
 	//The number of combo points (Consecutive bombs created)
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly, Category = "Combo Mechanic")
 	int CurrentComboPoints;
@@ -43,7 +55,7 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Combo Mechanic")
 	float ActiveComboModifier;
 	//The number of bomb currently in game
-	int BombCount;
+	TArray<ABomb*> SpawnedBombs;
 
 public:
 	ADarklightProjectGameMode();
@@ -73,6 +85,9 @@ public:
 	/** The maximum distance where two trails are considered to be intersecting*/
 	UPROPERTY(EditDefaultsOnly, Category = "Trail Algorythm")
 	float TrailDistanceTolerance;
+	//If characters are within this distance from each other, their bombs will be combined into a single bomb
+	UPROPERTY(EditDefaultsOnly, Category = "Trail Algorythm")
+	float MinimumBombDistance;
 	UPROPERTY(EditDefaultsOnly, Category = "Trail Algorythm")
 	bool bDebugTrail;
 	UPROPERTY(EditDefaultsOnly, Category = "Trail Algorythm")
