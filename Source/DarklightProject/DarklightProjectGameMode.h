@@ -58,6 +58,8 @@ protected:
 	int ComboStageIndex;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Combo Mechanic")
 	float ActiveComboModifier;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Score")
+	float PlayerScore;
 	//The number of bomb currently in game
 	TArray<ABomb*> SpawnedBombs;
 
@@ -66,6 +68,8 @@ public:
 	virtual void BeginPlay() override;
 	UFUNCTION(BlueprintNativeEvent, Category = "Trail Algorythm")
 	void HandleTrailCollision(FVector ContactPoint,ADarklightProjectCharacter* Bomber);
+	UFUNCTION(BlueprintCallable,Category="Score")
+	void IncrementPlayerScore(float Increment);
 	//Function called by timer that reset the combo level and points of the player
 	void ResetCombo();
 	//Function called when a bomb is destroyed (so we can track the number of bomb currently in game)

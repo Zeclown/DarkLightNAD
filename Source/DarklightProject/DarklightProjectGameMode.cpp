@@ -23,6 +23,7 @@ void ADarklightProjectGameMode::BeginPlay()
 	Super::BeginPlay();
 	ComboStageIndex = 0;
 	CurrentComboPoints = 0;
+	PlayerScore = 0;
 	//Set Timer for  trail collision check
 	GetWorld()->GetTimerManager().SetTimer(TrailCheckTimer, this, &ADarklightProjectGameMode::CheckTrailCollisions, TrailQueryRate, true);
 	//Find players in game
@@ -35,6 +36,11 @@ void ADarklightProjectGameMode::BeginPlay()
 		Players.Add(*Itr);
 		SavedPoints.Add(TArray<FTrailPoint>());
 	}
+}
+
+void ADarklightProjectGameMode::IncrementPlayerScore(float Increment)
+{
+	PlayerScore += Increment*ActiveComboModifier;
 }
 
 void ADarklightProjectGameMode::ResetCombo()
