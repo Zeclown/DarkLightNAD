@@ -12,9 +12,11 @@ bool AHealingPlant::Activate_Implementation(ABomb * Activator)
 {
 	if (!bActivated)
 	{
-		Super::Activate_Implementation(Activator);
-		ADarklightProjectCharacter::SetHealth(ADarklightProjectCharacter::GetHealth() + HealingAmount);
-		return true;
+		if (Super::Activate_Implementation(Activator))
+		{
+			ADarklightProjectCharacter::SetHealth(ADarklightProjectCharacter::GetHealth() + HealingAmount);
+			return true;
+		}
 	}
 	return false;
 }

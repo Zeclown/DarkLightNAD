@@ -3,6 +3,7 @@
 #pragma once
 
 #include "GameFramework/Actor.h"
+#include "DarklightProjectGameMode.h"
 #include "Bomb.generated.h"
 
 UCLASS(ABSTRACT)
@@ -20,7 +21,7 @@ public:
 	// Called when the game starts or when spawned
 	void BeginPlay() override;
 	UFUNCTION(BlueprintCallable, Category = "Bomb Mechanism")
-	void ReceiveModifier(float Modifier);
+	void ReceiveModifier(FComboLevel Modifier);
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Bomb Mechanism")
 	float Radius;
 	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = "Bomb Mechanism")
