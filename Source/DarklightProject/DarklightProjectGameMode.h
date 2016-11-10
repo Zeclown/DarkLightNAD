@@ -2,6 +2,7 @@
 #pragma once
 #include "GameFramework/GameMode.h"
 #include "DarklightProjectCharacter.h"
+#include "ParticleDefinitions.h"
 #include "DarklightProjectGameMode.generated.h"
 //Structure representing a combo level a player can achieve after a number of combo points
 USTRUCT(BlueprintType)
@@ -18,6 +19,9 @@ public:
 	*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combo Stats")
 	float ComboModifier;
+	//If left empty , will fallback to the older particle system
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combo Stats")
+	UParticleSystem* ParticleSystem;
 };
 //Structure representing a point in a player's trail
 USTRUCT(BlueprintType)
@@ -54,6 +58,8 @@ protected:
 	int ComboStageIndex;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Combo Mechanic")
 	float ActiveComboModifier;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Score")
+	float PlayerScore;
 	//The number of bomb currently in game
 	TArray<ABomb*> SpawnedBombs;
 
@@ -62,6 +68,8 @@ public:
 	virtual void BeginPlay() override;
 	UFUNCTION(BlueprintNativeEvent, Category = "Trail Algorythm")
 	void HandleTrailCollision(FVector ContactPoint,ADarklightProjectCharacter* Bomber);
+	UFUNCTION(BlueprintCallable,Category="Score")
+	void IncrementPlayerScore(float Increment);
 	//Function called by timer that reset the combo level and points of the player
 	void ResetCombo();
 	//Function called when a bomb is destroyed (so we can track the number of bomb currently in game)

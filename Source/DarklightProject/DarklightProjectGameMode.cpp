@@ -23,6 +23,7 @@ void ADarklightProjectGameMode::BeginPlay()
 	Super::BeginPlay();
 	ComboStageIndex = 0;
 	CurrentComboPoints = 0;
+	PlayerScore = 0;
 	//Set Timer for  trail collision check
 	GetWorld()->GetTimerManager().SetTimer(TrailCheckTimer, this, &ADarklightProjectGameMode::CheckTrailCollisions, TrailQueryRate, true);
 	//Find players in game
@@ -35,6 +36,11 @@ void ADarklightProjectGameMode::BeginPlay()
 		Players.Add(*Itr);
 		SavedPoints.Add(TArray<FTrailPoint>());
 	}
+}
+
+void ADarklightProjectGameMode::IncrementPlayerScore(float Increment)
+{
+	PlayerScore += Increment*ActiveComboModifier;
 }
 
 void ADarklightProjectGameMode::ResetCombo()
@@ -55,7 +61,7 @@ void ADarklightProjectGameMode::SignalBombDestruction(AActor* DestroyedBomb)
 void ADarklightProjectGameMode::HandleTrailCollision_Implementation(FVector ContactPoint, ADarklightProjectCharacter* Bomber)
 {
 	ABomb* NewBomb = GetWorld()->SpawnActor<ABomb>(Bomber->CurrentBomb, ContactPoint, FRotator::ZeroRotator);
-	NewBomb->ReceiveModifier(ActiveComboModifier);
+	NewBomb->ReceiveModifier(ComboStages[ComboStageIndex]);
 	NewBomb->OnDestroyed.AddDynamic(this, &ADarklightProjectGameMode::SignalBombDestruction);
 	SpawnedBombs.Add(NewBomb);
 	//We prevent players too close to trigger another explosion
