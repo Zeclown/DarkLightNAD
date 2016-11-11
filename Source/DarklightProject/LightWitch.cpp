@@ -1,15 +1,23 @@
 #include "DarklightProject.h"
 #include "LightWitch.h"
+#include "Runtime/Engine/Classes/Kismet/KismetMaterialLibrary.h"
+ALightWitch::ALightWitch()
+{
+	PrimaryActorTick.bCanEverTick = true;
+	static ConstructorHelpers::FObjectFinder<UObject> MaterialCol(TEXT("/Game/Characters/Materials/RoxyBody"));
+	if (MaterialCol.Succeeded())
+	{
+		BodyMaterialCollection = reinterpret_cast<UMaterialParameterCollection*>(MaterialCol.Object);
+		//UKismetMaterialLibrary::SetScalarParameterValue(GetWorld(), BodyMaterialCollection, "MaxGlowAmount", GlowOnClick);
+	}
 
+}
 void ALightWitch::BeginPlay()
 {
 	Super::BeginPlay();
 }
 
-ALightWitch::ALightWitch()
-{
-	PrimaryActorTick.bCanEverTick = true;
-}
+
 void ALightWitch::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
