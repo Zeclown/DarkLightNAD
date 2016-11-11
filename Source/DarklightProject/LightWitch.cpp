@@ -8,13 +8,14 @@ ALightWitch::ALightWitch()
 	if (MaterialCol.Succeeded())
 	{
 		BodyMaterialCollection = reinterpret_cast<UMaterialParameterCollection*>(MaterialCol.Object);
-		//UKismetMaterialLibrary::SetScalarParameterValue(GetWorld(), BodyMaterialCollection, "MaxGlowAmount", GlowOnClick);
+
 	}
 
 }
 void ALightWitch::BeginPlay()
 {
 	Super::BeginPlay();
+
 }
 
 

@@ -1,5 +1,6 @@
 #include "DarklightProject.h"
 #include "DarklightProjectCharacter.h"
+#include "Runtime/Engine/Classes/Kismet/KismetMaterialLibrary.h"
 float ADarklightProjectCharacter::GlobalMaxHealth = 100;
 float ADarklightProjectCharacter::GlobalHealth = GlobalMaxHealth;
 FPlayerDeath ADarklightProjectCharacter::PlayerDeathEvent;
@@ -31,7 +32,7 @@ ADarklightProjectCharacter::ADarklightProjectCharacter()
 	{
 		CurrentBomb = *BombBP.Class;
 	}
-	GlowOnClick = 0.5f;
+	GlowOnClick = 4;
 
 }
 
@@ -40,6 +41,8 @@ void ADarklightProjectCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	DefaultMaxWalkSpeed = GetCharacterMovement()->MaxWalkSpeed;
+	if (BodyMaterialCollection)
+		UKismetMaterialLibrary::SetScalarParameterValue(GetWorld(), BodyMaterialCollection, "MaxGlowAmount", GlowOnClick);
 }
 
 float ADarklightProjectCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser)
