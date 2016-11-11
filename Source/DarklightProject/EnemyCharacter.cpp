@@ -16,10 +16,11 @@ void AEnemyCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	bDead = false;
+	MaxHealthPoint = 60;
 	HealthPoint = MaxHealthPoint;
 }
 
-float AEnemyCharacter::TakeDamage(float DamageAmount, FDamageEvent const & DamageEvent, AController * EventInstigator, AActor * DamageCauser)
+float AEnemyCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEvent, class AController * EventInstigator, class AActor * DamageCauser)
 {
 	const float ActualDamage = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
 	HealthPoint -= ActualDamage;
@@ -30,6 +31,7 @@ float AEnemyCharacter::TakeDamage(float DamageAmount, FDamageEvent const & Damag
 	return ActualDamage;
 }
 
-
-
+bool AEnemyCharacter::GetBDead() {
+	return bDead;
+}
 

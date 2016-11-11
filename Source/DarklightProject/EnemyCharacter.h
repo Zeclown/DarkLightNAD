@@ -9,14 +9,17 @@ UCLASS()
 class DARKLIGHTPROJECT_API AEnemyCharacter : public ACharacter
 {
 	GENERATED_BODY()
-	bool bDead;
 public:
 	// Sets default values for this character's properties
 	AEnemyCharacter();
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "State")
+	bool bDead;
+	UFUNCTION(BlueprintCallable, Category = "Player State")
+	bool GetBDead();
 	//The number of hp this unit currently has
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "State")
 	float HealthPoint;
