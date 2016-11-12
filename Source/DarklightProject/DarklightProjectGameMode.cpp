@@ -17,6 +17,7 @@ ADarklightProjectGameMode::ADarklightProjectGameMode()
 	MinimumLevel.MinimumComboPoints = 0;
 	ComboStages.Add(MinimumLevel);
 	MinimumBombDistance = 15;
+
 }
 void ADarklightProjectGameMode::BeginPlay()
 {
