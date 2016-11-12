@@ -22,8 +22,6 @@ protected:
 	static FPlayerDeath PlayerDeathEvent;
 	static float GlobalHealth;
 	static float GlobalMaxHealth;
-	UPROPERTY(VisibleAnywhere,BlueprintReadWrite,Category="Character Movement: Walking")
-	bool bSprinting;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Character Movement: Walking")
 	float MaxSprintSpeed;
 	UPROPERTY(BlueprintReadOnly, Category = "Character Movement: Walking")
@@ -36,17 +34,6 @@ public:
 	virtual void BeginPlay();
 
 	FPlayerDeath& OnDeath() { return PlayerDeathEvent; }
-
-	/** Returns SideViewCameraComponent subobject **/
-	FORCEINLINE class UCameraComponent* GetSideViewCameraComponent() const { return SideViewCameraComponent; }
-	/** Returns CameraBoom subobject **/
-	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
-	//The duration each position the player passes stay saved in the trail algorythm in seconds
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Trail")
-	float TrailLenght;
-	//Is the player charged up and ready to produce a collision with another trail
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trail")
-	bool bChargedUp;
 	UFUNCTION(BlueprintCallable, Category = "Player State")
 	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser) override;
 	UFUNCTION(BlueprintCallable, Category = "Player State")
@@ -59,4 +46,21 @@ public:
 	static void SetMaxHealth(float HealthPoints);
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Trail")
 	TSubclassOf<class ABomb> CurrentBomb;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Character Movement: Walking")
+	bool bSprinting;
+	/** Returns SideViewCameraComponent subobject **/
+	FORCEINLINE class UCameraComponent* GetSideViewCameraComponent() const { return SideViewCameraComponent; }
+	/** Returns CameraBoom subobject **/
+	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
+	//The duration each position the player passes stay saved in the trail algorythm in seconds
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Trail")
+	float TrailLenght;
+	//Is the player charged up and ready to produce a collision with another trail
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trail")
+	bool bChargedUp;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Character")
+	UMaterialParameterCollection* BodyMaterialCollection;
+	//The % increase of the glow effect when the character is clicked (to signal which character is controlled)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	float GlowOnClick;
 };
