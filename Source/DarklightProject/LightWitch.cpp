@@ -10,7 +10,7 @@ ALightWitch::ALightWitch()
 		BodyMaterialCollection = reinterpret_cast<UMaterialParameterCollection*>(MaterialCol.Object);
 
 	}
-
+	GetMesh()->CustomDepthStencilValue = STENCIL_ROXY_OUTLINE;
 }
 void ALightWitch::BeginPlay()
 {

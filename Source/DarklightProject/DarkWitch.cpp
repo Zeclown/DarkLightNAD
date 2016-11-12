@@ -14,7 +14,7 @@ ADarkWitch::ADarkWitch()
 		BodyMaterialCollection = reinterpret_cast<UMaterialParameterCollection*>(MaterialCol.Object);
 
 	}
-
+	GetMesh()->CustomDepthStencilValue = STENCIL_YSERA_OUTLINE;
 }
 
 void ADarkWitch::BeginPlay()

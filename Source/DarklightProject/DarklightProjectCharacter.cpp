@@ -33,7 +33,8 @@ ADarklightProjectCharacter::ADarklightProjectCharacter()
 		CurrentBomb = *BombBP.Class;
 	}
 	GlowOnClick = 4;
-
+	GetMesh()->SetRenderCustomDepth(true);
+	GetMesh()->CustomDepthStencilValue = STENCIL_BASE_OUTLINE;
 }
 
 
