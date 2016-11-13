@@ -27,6 +27,7 @@ void ABomb::ReceiveModifier(FComboLevel Modifier)
 	Radius += Radius*Modifier.ComboModifier;
 	UParticleSystemComponent* PS= FindComponentByClass<UParticleSystemComponent>();
 	PS->Template = Modifier.ParticleSystem;
+	PS->SetRelativeScale3D(PS->GetRelativeTransform().GetScale3D()+PS->GetRelativeTransform().GetScale3D()*Modifier.ComboModifier);
 }
 
 
