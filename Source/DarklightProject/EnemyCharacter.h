@@ -27,6 +27,8 @@ public:
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="State")
 	float MaxHealthPoint;
 	UFUNCTION(BlueprintCallable, Category = "State")
+	void SetMaxHealthPoint(float param);
+	UFUNCTION(BlueprintCallable, Category = "State")
 	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser) override;
 
 

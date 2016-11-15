@@ -3,7 +3,6 @@
 #include "DarklightProject.h"
 #include "EnemyCharacter.h"
 
-
 // Sets default values
 AEnemyCharacter::AEnemyCharacter()
 {
@@ -33,5 +32,10 @@ float AEnemyCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const 
 
 bool AEnemyCharacter::GetBDead() {
 	return bDead;
+}
+
+void AEnemyCharacter::SetMaxHealthPoint(float param) {
+	MaxHealthPoint = param;
+	HealthPoint = MaxHealthPoint;
 }
 
