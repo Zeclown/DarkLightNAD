@@ -7,5 +7,6 @@
 #define STENCIL_ROXY_OUTLINE 254;
 #define STENCIL_BASE_OUTLINE 253;
 #include "EngineMinimal.h"
-				   
+#include "DarklightSaveGame.h"
+#include "Kismet/GameplayStatics.h"				   
 #endif

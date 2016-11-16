@@ -3,6 +3,8 @@
 #include "Runtime/Engine/Classes/Kismet/KismetMaterialLibrary.h"
 float ADarklightProjectCharacter::GlobalMaxHealth = 100;
 float ADarklightProjectCharacter::GlobalHealth = GlobalMaxHealth;
+int ADarklightProjectCharacter::MaxLives = 3;
+int ADarklightProjectCharacter::Lives = MaxLives;
 FPlayerDeath ADarklightProjectCharacter::PlayerDeathEvent;
 ADarklightProjectCharacter::ADarklightProjectCharacter()
 {
@@ -79,6 +81,26 @@ float ADarklightProjectCharacter::GetMaxHealth()
 void ADarklightProjectCharacter::SetMaxHealth(float HealthPoints)
 {
 	GlobalMaxHealth = HealthPoints;
+}
+
+int ADarklightProjectCharacter::GetLives()
+{
+	return Lives;
+}
+
+void ADarklightProjectCharacter::SetLives(int Lives)
+{
+	ADarklightProjectCharacter::Lives = Lives;
+}
+
+int ADarklightProjectCharacter::GetMaxLives()
+{
+	return MaxLives;
+}
+
+void ADarklightProjectCharacter::SetMaxLives(int Lives)
+{
+	MaxLives = Lives;
 }
 
 

@@ -6,6 +6,7 @@
 #include "Engine.h"
 #include "Engine/Blueprint.h"
 #include "DarklightProject/Bomb.h"
+#include "CheckPointPlant.h"
 ADarklightProjectGameMode::ADarklightProjectGameMode()
 {
 	TrailQueryRate = 0.05f;
@@ -27,6 +28,8 @@ void ADarklightProjectGameMode::BeginPlay()
 	PlayerScore = 0;
 	//Set Timer for  trail collision check
 	GetWorld()->GetTimerManager().SetTimer(TrailCheckTimer, this, &ADarklightProjectGameMode::CheckTrailCollisions, TrailQueryRate, true);
+	//Subscribe to the player death event
+	ADarklightProjectCharacter::OnDeath().AddUObject(this, &ADarklightProjectGameMode::HandlePlayerDeath);
 	//Find players in game
 	for (TObjectIterator<ADarklightProjectCharacter> Itr; Itr; ++Itr)
 	{
@@ -37,11 +40,89 @@ void ADarklightProjectGameMode::BeginPlay()
 		Players.Add(*Itr);
 		SavedPoints.Add(TArray<FTrailPoint>());
 	}
+	LoadSave();
+	//Erase old save
+	//UDarklightSaveGame* SaveGameInstance = Cast<UDarklightSaveGame>(UGameplayStatics::CreateSaveGameObject(UDarklightSaveGame::StaticClass()));
+	//UGameplayStatics::SaveGameToSlot(SaveGameInstance, SaveGameInstance->SaveSlotName, 1);
+
+}
+
+
+
+void ADarklightProjectGameMode::HandlePlayerDeath()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Player Died"), );
+	UGameplayStatics::OpenLevel(this, FName(*GetWorld()->GetName()), false);
 }
 
 void ADarklightProjectGameMode::IncrementPlayerScore(float Increment)
 {
 	PlayerScore += Increment*ActiveComboModifier;
+}
+
+void ADarklightProjectGameMode::SaveCheckpoint( ACheckPointPlant * CheckPoint)
+{
+	UDarklightSaveGame* SaveGameInstance = Cast<UDarklightSaveGame>(UGameplayStatics::CreateSaveGameObject(UDarklightSaveGame::StaticClass()));
+	SaveGameInstance->CheckPointID = CheckPoint->GetName();
+	SaveGameInstance->LevelName = GetWorld()->StreamingLevelsPrefix;
+	SaveGameInstance->PlayerScore = PlayerScore;
+	for (TObjectIterator<APlant> Itr; Itr; ++Itr)
+	{
+		if (Itr->GetWorld() != GetWorld())
+		{
+			continue;
+		}
+		SaveGameInstance->Activated.Add(Itr->GetName(),Itr->bActivated);
+	}
+	UGameplayStatics::SaveGameToSlot(SaveGameInstance, SaveGameInstance->SaveSlotName, 1);
+}
+
+void ADarklightProjectGameMode::LoadSave()
+{
+	UDarklightSaveGame* LoadGameInstance = Cast<UDarklightSaveGame>(UGameplayStatics::CreateSaveGameObject(UDarklightSaveGame::StaticClass()));
+	LoadGameInstance = Cast<UDarklightSaveGame>(UGameplayStatics::LoadGameFromSlot(LoadGameInstance->SaveSlotName, 1));
+	if (LoadGameInstance)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Save File detected"), );
+		PlayerScore = LoadGameInstance->PlayerScore;
+		//Get all the plants currently in the level
+		TArray<APlant*> LevelPlants;
+		for (TObjectIterator<APlant> Itr; Itr; ++Itr)
+		{
+			if (Itr->GetWorld() != GetWorld())
+			{
+				continue;
+			}
+			LevelPlants.Add(*Itr);
+		}
+		for (auto PlantSaved : LoadGameInstance->Activated)
+		{		
+			//Return the plant in the level that correspond to the plant
+			APlant* CurrentPlant = *LevelPlants.FindByPredicate([PlantSaved](APlant* n) {return n->GetName() == PlantSaved.Key; });
+			if (!CurrentPlant)
+			{
+				UE_LOG(LogTemp, Warning, TEXT("ERROR:Save File Corrupted, deleting it"), );
+			}
+			CurrentPlant->bActivated = PlantSaved.Value;
+		}
+		if (LoadGameInstance->Activated.Num() > 0)
+		{
+			ACheckPointPlant* CheckPointPlant = Cast<ACheckPointPlant>(*LevelPlants.FindByPredicate([LoadGameInstance](APlant* n) {return n->GetName() == LoadGameInstance->CheckPointID; }));
+			for (int i = 0; i < Players.Num(); i++)
+			{
+				if (i < CheckPointPlant->SpawnPoints.Num())
+				{
+					Players[i]->SetActorLocation(CheckPointPlant->SpawnPoints[i]);
+				}
+				else
+				{
+					Players[i]->SetActorLocation(CheckPointPlant->GetActorLocation() + FVector::RightVector*i);
+				}
+			}
+		}
+	}
+	else
+		UE_LOG(LogTemp, Warning, TEXT("No SaveFile Found"), );
 }
 
 void ADarklightProjectGameMode::ResetCombo()

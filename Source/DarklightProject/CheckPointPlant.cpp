@@ -9,21 +9,29 @@ ACheckPointPlant::ACheckPointPlant()
 }
 void ACheckPointPlant::BeginPlay()
 {
-	//UWorld* GameWorld=GetWorld();
-	//for (TObjectIterator<ADarklightProjectGameMode> Itr; Itr; ++Itr)
-	//{
-	//	// Filter out objects not contained in the target world.
-	//	if (Itr->GetWorld() != GameWorld)
-	//	{
-	//		continue;
-	//	}
-	//	GM = *Itr;
-	//	break;
-	//}
+	UWorld* GameWorld=GetWorld();
+	for (TObjectIterator<ADarklightProjectGameMode> Itr; Itr; ++Itr)
+	{
+		// Filter out objects not contained in the target world.
+		if (Itr->GetWorld() != GameWorld)
+		{
+			continue;
+		}
+		GM = *Itr;
+		break;
+	}
 }
 bool ACheckPointPlant::Activate_Implementation(ABomb * Activator)
 {
-
+	if (Super::Activate_Implementation(Activator))
+	{
+		ADarklightProjectGameMode* GameMode = Cast<ADarklightProjectGameMode>(GetWorld()->GetAuthGameMode());
+		if (GameMode)
+		{
+			GameMode->SaveCheckpoint(this);
+		}
+		return true;
+	}
 	return false;
 }
 

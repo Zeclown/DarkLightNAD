@@ -21,7 +21,7 @@ void APlant::BeginPlay()
 bool APlant::Activate_Implementation(ABomb * Activator)
 {
 	HitCounter--;
-	if (HitCounter <= 0)
+	if (HitCounter <= 0 && !bActivated)
 	{
 		bActivated = true;
 		PlantActivatedEvent.Broadcast();
