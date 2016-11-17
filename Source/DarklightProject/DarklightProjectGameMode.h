@@ -4,6 +4,8 @@
 #include "DarklightProjectCharacter.h"
 #include "ParticleDefinitions.h"
 #include "DarklightProjectGameMode.generated.h"
+//FD
+class ACheckPointPlant;
 //Structure representing a combo level a player can achieve after a number of combo points
 USTRUCT(BlueprintType)
 struct FComboLevel
@@ -67,9 +69,15 @@ public:
 	ADarklightProjectGameMode();
 	virtual void BeginPlay() override;
 	UFUNCTION(BlueprintNativeEvent, Category = "Trail Algorythm")
-	void HandleTrailCollision(FVector ContactPoint,ADarklightProjectCharacter* Bomber);
+	void HandleTrailCollision(FVector ContactPoint, ADarklightProjectCharacter* Bomber);
+	UFUNCTION(BlueprintCallable, Category = "State")
+	void HandlePlayerDeath();
 	UFUNCTION(BlueprintCallable,Category="Score")
 	void IncrementPlayerScore(float Increment);
+	UFUNCTION(BlueprintCallable, Category = "Save")
+	void SaveCheckpoint(ACheckPointPlant* CheckPoint);
+	UFUNCTION(BlueprintCallable, Category = "Save")
+	void LoadSave();
 	//Function called by timer that reset the combo level and points of the player
 	void ResetCombo();
 	//Function called when a bomb is destroyed (so we can track the number of bomb currently in game)

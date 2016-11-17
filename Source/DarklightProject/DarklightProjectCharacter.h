@@ -22,6 +22,8 @@ protected:
 	static FPlayerDeath PlayerDeathEvent;
 	static float GlobalHealth;
 	static float GlobalMaxHealth;
+	static int MaxLives;
+	static int Lives;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Character Movement: Walking")
 	float MaxSprintSpeed;
 	UPROPERTY(BlueprintReadOnly, Category = "Character Movement: Walking")
@@ -33,7 +35,7 @@ public:
 	ADarklightProjectCharacter();
 	virtual void BeginPlay();
 
-	FPlayerDeath& OnDeath() { return PlayerDeathEvent; }
+	static FPlayerDeath& OnDeath() { return PlayerDeathEvent; }
 	UFUNCTION(BlueprintCallable, Category = "Player State")
 	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser) override;
 	UFUNCTION(BlueprintCallable, Category = "Player State")
@@ -44,6 +46,14 @@ public:
 	static float GetMaxHealth();
 	UFUNCTION(BlueprintCallable, Category = "Player State")
 	static void SetMaxHealth(float HealthPoints);
+	UFUNCTION(BlueprintCallable, Category = "Player State")
+	static int GetLives();
+	UFUNCTION(BlueprintCallable, Category = "Player State")
+	static void SetLives(int Lives);
+	UFUNCTION(BlueprintCallable, Category = "Player State")
+	static int GetMaxLives();
+	UFUNCTION(BlueprintCallable, Category = "Player State")
+	static void SetMaxLives(int Lives);
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Trail")
 	TSubclassOf<class ABomb> CurrentBomb;
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Character Movement: Walking")

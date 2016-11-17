@@ -18,5 +18,7 @@ public:
 	ACheckPointPlant();
 	virtual bool Activate_Implementation(ABomb * Activator) override;
 	virtual void BeginPlay() override;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TArray<FVector> SpawnPoints;
 	
 };
