@@ -47,6 +47,11 @@ void ADarklightProjectGameMode::BeginPlay()
 
 }
 
+void ADarklightProjectGameMode::EndGame_Implementation()
+{
+	UGameplayStatics::OpenLevel(GetWorld(), "EndMenuLevel");
+}
+
 
 
 void ADarklightProjectGameMode::HandlePlayerDeath()

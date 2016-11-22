@@ -68,6 +68,8 @@ protected:
 public:
 	ADarklightProjectGameMode();
 	virtual void BeginPlay() override;
+	UFUNCTION(BlueprintNativeEvent,BlueprintCallable, Category = "State")
+	void EndGame();
 	UFUNCTION(BlueprintNativeEvent, Category = "Trail Algorythm")
 	void HandleTrailCollision(FVector ContactPoint, ADarklightProjectCharacter* Bomber);
 	UFUNCTION(BlueprintCallable, Category = "State")
