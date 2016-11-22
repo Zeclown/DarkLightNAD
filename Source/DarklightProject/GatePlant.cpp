@@ -4,6 +4,7 @@
 #include "GatePlant.h"
 void AGatePlant::BeginPlay()
 {
+	Super::BeginPlay();
 	BudsActivated = 0;
 	for (APlant* Bud : Buds)
 	{
