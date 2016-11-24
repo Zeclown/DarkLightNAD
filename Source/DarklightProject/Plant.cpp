@@ -15,7 +15,7 @@ void APlant::BeginPlay()
 {
 	Super::BeginPlay();
 	HitCounter = HitsToActivate;
-	
+	DynamicMaterial = UMaterialInstanceDynamic::Create(ActivatedMaterial, this);
 }
 
 bool APlant::Activate_Implementation(ABomb * Activator)
@@ -25,6 +25,15 @@ bool APlant::Activate_Implementation(ABomb * Activator)
 	{
 		bActivated = true;
 		PlantActivatedEvent.Broadcast();
+		if (ActivatedMaterial)
+		{
+			TArray<USkeletalMeshComponent*> Meshes;
+			GetComponents<USkeletalMeshComponent>(Meshes);
+			for (USkeletalMeshComponent* MeshComps : Meshes)
+			{
+				MeshComps->SetMaterial(0, ActivatedMaterial);
+			}
+		}
 		return true;
 	}
 	return false;
