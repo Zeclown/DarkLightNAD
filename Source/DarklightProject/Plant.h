@@ -15,6 +15,7 @@ protected:
 	FPlantActivated PlantActivatedEvent;
 	//The number of explosion that hit this plant
 	int HitCounter;
+	UMaterialInstanceDynamic* DynamicMaterial;
 public:	
 	// Sets default values for this actor's properties
 	APlant();
@@ -24,6 +25,8 @@ public:
 	 //Is the plant already activated
 	 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Plant")
 	bool bActivated;
+	 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Plant")
+	 UMaterialInterface* ActivatedMaterial;
 	 //The number of explosions required to activate this plant
 	 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Plant",meta= (ClampMin = 1))
 	int HitsToActivate;
