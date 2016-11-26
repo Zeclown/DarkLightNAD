@@ -8,5 +8,6 @@
 #define STENCIL_BASE_OUTLINE 253;
 #include "EngineMinimal.h"
 #include "DarklightSaveGame.h"
+#include "DarklightProjectLeaderboard.h"
 #include "Kismet/GameplayStatics.h"				   
 #endif

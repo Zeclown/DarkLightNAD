@@ -62,6 +62,8 @@ protected:
 	float ActiveComboModifier;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Score")
 	float PlayerScore;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Score")
+	int HighestCombo;
 	//The number of bomb currently in game
 	TArray<ABomb*> SpawnedBombs;
 

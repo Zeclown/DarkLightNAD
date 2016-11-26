@@ -163,6 +163,10 @@ void ADarklightProjectGameMode::HandleTrailCollision_Implementation(FVector Cont
 void ADarklightProjectGameMode::AddComboPoint()
 {
 	CurrentComboPoints++;
+	if (HighestCombo < CurrentComboPoints)
+	{
+		HighestCombo = CurrentComboPoints;
+	}
 	//Can we get to the next stage?
 	if (ComboStageIndex+1 < ComboStages.Num() && CurrentComboPoints >= ComboStages[ComboStageIndex + 1].MinimumComboPoints)
 	{
