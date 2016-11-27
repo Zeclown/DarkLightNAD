@@ -30,6 +30,8 @@ public:
 	 //The number of explosions required to activate this plant
 	 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Plant",meta= (ClampMin = 1))
 	int HitsToActivate;
+	 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Plant", meta = (ClampMin = 0))
+	 int PointsOnActivate;
 	 FPlantActivated& OnPlantActivate() { return PlantActivatedEvent; }
 
 };

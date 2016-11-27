@@ -8,6 +8,7 @@
 APlant::APlant()
 {
 	HitsToActivate = 1;
+	PointsOnActivate = 0;
 }
 
 // Called when the game starts or when spawned
@@ -34,6 +35,9 @@ bool APlant::Activate_Implementation(ABomb * Activator)
 				MeshComps->SetMaterial(0, ActivatedMaterial);
 			}
 		}
+		ADarklightProjectGameMode* GameMode = Cast<ADarklightProjectGameMode>(GetWorld()->GetAuthGameMode());
+		if (GameMode)
+			GameMode->IncrementPlayerScore(PointsOnActivate);
 		return true;
 	}
 	return false;

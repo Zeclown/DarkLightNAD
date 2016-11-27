@@ -11,10 +11,16 @@ void AEndScreenGameMode::LoadSaves()
 
 	LBSave = Cast<UDarklightProjectLeaderboard>(UGameplayStatics::CreateSaveGameObject(UDarklightProjectLeaderboard::StaticClass()));
 	LBSave = Cast<UDarklightProjectLeaderboard>(UGameplayStatics::LoadGameFromSlot(LBSave->SaveSlotName, 1));
+	if (!LBSave)
+	{
+		LBSave = Cast<UDarklightProjectLeaderboard>(UGameplayStatics::CreateSaveGameObject(UDarklightProjectLeaderboard::StaticClass()));
+		UGameplayStatics::SaveGameToSlot(LBSave, LBSave->SaveSlotName, 1);
+	}
 }
 
 void AEndScreenGameMode::BeginPlay()
 {
+	Super::BeginPlay();
 	LoadSaves();
 	//Send the submit score result to the bp
 	SubmitScore(LBSave && LBSave->SubmitScore(LastGameSave->PlayerScore));
@@ -23,5 +29,6 @@ void AEndScreenGameMode::BeginPlay()
 bool AEndScreenGameMode::ReceiveName_Implementation(const FString& Name)
 {
 	LBSave->AddScore(Name, LastGameSave->PlayerScore);
+	UGameplayStatics::SaveGameToSlot(LBSave, LBSave->SaveSlotName, 1);
 	return true;
 }
