@@ -20,6 +20,9 @@ public:
 	bool bDead;
 	UFUNCTION(BlueprintCallable, Category = "Player State")
 	bool GetBDead();
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Enemy", meta = (ClampMin = 0))
+	int ScoreOnDeath;
+	
 	//The number of hp this unit currently has
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "State")
 	float HealthPoint;
@@ -30,6 +33,7 @@ public:
 	void SetMaxHealthPoint(float param);
 	UFUNCTION(BlueprintCallable, Category = "State")
 	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser) override;
+
 
 
 	

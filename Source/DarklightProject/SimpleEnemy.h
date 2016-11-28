@@ -12,8 +12,5 @@ UCLASS()
 class DARKLIGHTPROJECT_API ASimpleEnemy : public AEnemyCharacter
 {
 	GENERATED_BODY()
-	
-	
-	
-	
+
 };

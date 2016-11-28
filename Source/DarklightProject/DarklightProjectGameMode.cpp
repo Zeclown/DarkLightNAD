@@ -18,7 +18,6 @@ ADarklightProjectGameMode::ADarklightProjectGameMode()
 	MinimumLevel.MinimumComboPoints = 0;
 	ComboStages.Add(MinimumLevel);
 	MinimumBombDistance = 15;
-
 }
 void ADarklightProjectGameMode::BeginPlay()
 {
@@ -62,7 +61,7 @@ void ADarklightProjectGameMode::HandlePlayerDeath()
 
 void ADarklightProjectGameMode::IncrementPlayerScore(float Increment)
 {
-	PlayerScore += Increment*ActiveComboModifier;
+	PlayerScore += Increment+ Increment*ActiveComboModifier;
 }
 
 void ADarklightProjectGameMode::SaveCheckpoint( ACheckPointPlant * CheckPoint)
