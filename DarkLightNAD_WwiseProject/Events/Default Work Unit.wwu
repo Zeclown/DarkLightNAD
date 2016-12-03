@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{050302A4-0773-412F-8C50-B21709B4A107}" SchemaVersion="75">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{050302A4-0773-412F-8C50-B21709B4A107}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Explode" ID="{5090B112-7CD0-421E-A946-64B1BB244ABD}">
+					<ChildrenList>
+						<Action Name="Play" ID="{A65D4CDE-1572-4DDB-AEC1-6D6381AB61C7}" ShortID="930494585" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{144A7EA7-D860-4952-8B07-FFD966236084}" Global="false">
+									<ObjectRef Name="Spark2" ID="{4DFC8AED-4A9D-439B-B37F-A81784183E7D}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Activate" ID="{C126C8BD-BE7F-47FE-8EC7-27A2AD52425F}">
+					<ChildrenList>
+						<Action Name="Play" ID="{7A74CB1C-0D4E-4559-B837-AA655EA677CC}" ShortID="741849762" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{5534BDBD-4C0D-4A25-B7AA-4FC4D17930BD}" Global="false">
+									<ObjectRef Name="Activate" ID="{6C4CA9AD-0D37-431C-876B-A5E89CB909F3}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="OnClick" ID="{A829C3D3-3BC1-4068-8DC8-78A8194D957C}">
+					<ChildrenList>
+						<Action Name="Play" ID="{0C1D1770-7349-4828-B63F-E197D73E9A39}" ShortID="321158708" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{807459E4-54ED-43A7-83B0-B4891FE0F0F2}" Global="false">
+									<ObjectRef Name="MenuConfirm2" ID="{6F9AB21D-5597-4D10-9F40-6EF35355A3B7}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

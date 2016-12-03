@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<IncrementalBankBuild Version="6" Flags="601859981">
+	<Platform GUID="{6F9A87DC-F891-4DCE-9647-2B70879FBDA8}">
+		<Banks>
+			<Language ID="0">
+				<File Name="Darklight" Hash="583333123" Timestamp="131249520772922690"/>
+				<File Name="DarklightProject" Hash="2898286734" Timestamp="131249489713576197"/>
+				<File Name="Init" Hash="3806675398" Timestamp="131249174666089548"/>
+			</Language>
+		</Banks>
+		<XMLInfo>
+			<Language ID="-1">
+				<File Name="" Hash="1015080255" Timestamp="131249520773212707"/>
+			</Language>
+		</XMLInfo>
+	</Platform>
+</IncrementalBankBuild>
