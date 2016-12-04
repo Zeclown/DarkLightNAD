@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}" SchemaVersion="75">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Spark2" ID="{4DFC8AED-4A9D-439B-B37F-A81784183E7D}" ShortID="235024655" Type="SoundFX">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>430</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-1</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Spark2" ID="{A06F1483-8092-407B-AFF8-963A4573DCE0}" ShortID="322358094">
+							<Language>SFX</Language>
+							<AudioFile>Clean\Spark2.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Spark2" ID="{A06F1483-8092-407B-AFF8-963A4573DCE0}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Activate" ID="{6C4CA9AD-0D37-431C-876B-A5E89CB909F3}" ShortID="687038460" Type="SoundFX">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Activate" ID="{8171AF8C-76D4-4E58-BDE4-20104CBAEF60}" ShortID="861164076">
+							<Language>SFX</Language>
+							<AudioFile>Clean\Activate.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Activate" ID="{8171AF8C-76D4-4E58-BDE4-20104CBAEF60}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="MenuConfirm2" ID="{6F9AB21D-5597-4D10-9F40-6EF35355A3B7}" ShortID="1016268217" Type="SoundFX">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="MenuConfirm2" ID="{E713BC9F-94A1-48C8-9ED4-454F5E9ADC26}" ShortID="693335126">
+							<Language>SFX</Language>
+							<AudioFile>Clean\MenuConfirm2.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="MenuConfirm2" ID="{E713BC9F-94A1-48C8-9ED4-454F5E9ADC26}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
