@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationCache Version="1" SchemaVersion="75">
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="2365701370" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\Attenuations\Default Work Unit.wwu" DateLow="2365731446" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\Audio Devices\Default Work Unit.wwu" DateLow="2365766544" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\Control Surface Sessions\Default Work Unit.wwu" DateLow="2365846753" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\Conversion Settings\Default Work Unit.wwu" DateLow="2365876841" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\Conversion Settings\Factory Conversion Settings.wwu" DateLow="2365916944" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\DarkLightNAD_WwiseProject.pierr.wsettings" DateLow="1918550645" DateHigh="30559994"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\DarkLightNAD_WwiseProject.wproj" DateLow="2366092406" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\Dynamic Dialogue\Default Work Unit.wwu" DateLow="2366132517" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\Effects\Default Work Unit.wwu" DateLow="2366167614" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\Effects\Factory Effects.wwu" DateLow="2366242807" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\Events\Default Work Unit.wwu" DateLow="2366292960" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\Game Parameters\Default Work Unit.wwu" DateLow="2366328033" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="2366839393" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="2366879500" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\Mixing Sessions\Default Work Unit.wwu" DateLow="2366924620" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\Modulators\Default Work Unit.wwu" DateLow="2366969740" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\Presets\Default Work Unit.wwu" DateLow="2372805270" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\Queries\Default Work Unit.wwu" DateLow="2372840368" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\Queries\Factory Queries.wwu" DateLow="2372880459" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="2372915552" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\Soundcaster Sessions\Default Work Unit.wwu" DateLow="2372945648" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\States\Default Work Unit.wwu" DateLow="2372980749" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\Switches\Default Work Unit.wwu" DateLow="2373005804" DateHigh="30559483"/>
+	<ValidationCacheItem File="D:\Unreal Projects\DarklightProject\DarkLightNAD_WwiseProject\Triggers\Default Work Unit.wwu" DateLow="2373040909" DateHigh="30559483"/>
+</ValidationCache>
