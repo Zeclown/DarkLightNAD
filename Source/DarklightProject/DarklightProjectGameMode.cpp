@@ -53,9 +53,8 @@ void ADarklightProjectGameMode::EndGame_Implementation()
 
 
 
-void ADarklightProjectGameMode::HandlePlayerDeath()
+void ADarklightProjectGameMode::HandlePlayerDeath_Implementation()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Player Died"), );
 	UGameplayStatics::OpenLevel(this, FName(*GetWorld()->GetName()), false);
 }
 

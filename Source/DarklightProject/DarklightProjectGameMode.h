@@ -74,7 +74,7 @@ public:
 	void EndGame();
 	UFUNCTION(BlueprintNativeEvent, Category = "Trail Algorythm")
 	void HandleTrailCollision(FVector ContactPoint, ADarklightProjectCharacter* Bomber);
-	UFUNCTION(BlueprintCallable, Category = "State")
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "State")
 	void HandlePlayerDeath();
 	UFUNCTION(BlueprintCallable,Category="Score")
 	void IncrementPlayerScore(float Increment);

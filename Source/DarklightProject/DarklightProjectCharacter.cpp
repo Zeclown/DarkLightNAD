@@ -4,6 +4,7 @@
 float ADarklightProjectCharacter::GlobalMaxHealth = 100;
 float ADarklightProjectCharacter::GlobalHealth = GlobalMaxHealth;
 int ADarklightProjectCharacter::MaxLives = 3;
+bool ADarklightProjectCharacter::bDead = false;
 int ADarklightProjectCharacter::Lives = MaxLives;
 FPlayerDeath ADarklightProjectCharacter::PlayerDeathEvent;
 ADarklightProjectCharacter::ADarklightProjectCharacter()
@@ -15,6 +16,8 @@ ADarklightProjectCharacter::ADarklightProjectCharacter()
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationYaw = false;
 	bUseControllerRotationRoll = false;
+	bDead = false;
+	GlobalHealth = GlobalMaxHealth;
 	// Configure character movement
 	GetCharacterMovement()->bOrientRotationToMovement = true; // Face in the direction we are moving..
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 720.0f, 0.0f); // ...at this rotation rate
@@ -54,6 +57,7 @@ float ADarklightProjectCharacter::TakeDamage(float DamageAmount, struct FDamageE
 	GlobalHealth -= ActualDamage;
 	if (GlobalHealth <= 0)
 	{
+		bDead = true;
 		PlayerDeathEvent.Broadcast();
 	}
 	return ActualDamage;
@@ -69,10 +73,14 @@ void ADarklightProjectCharacter::SetHealth(float HealthPoints)
 	GlobalHealth = FMath::Clamp(HealthPoints,0.0f,GlobalMaxHealth);
 	if (GlobalHealth <= 0)
 	{
+		bDead = true;
 		PlayerDeathEvent.Broadcast();
 	}
 }
-
+bool ADarklightProjectCharacter::IsDead()
+{
+	return bDead;
+}
 float ADarklightProjectCharacter::GetMaxHealth()
 {
 	return GlobalMaxHealth;
