@@ -21,6 +21,8 @@ public:
 	FString CheckPointID;
 	UPROPERTY(VisibleAnywhere, Category = Basic)
 	FString SaveSlotName;
+	UPROPERTY(VisibleAnywhere, Category = Basic)
+	int GameMode;
 	UPROPERTY(VisibleAnywhere, Category = Plants)
 	TMap<FString,bool> Activated;
 
