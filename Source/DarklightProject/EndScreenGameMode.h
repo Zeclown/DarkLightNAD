@@ -13,6 +13,7 @@ class DARKLIGHTPROJECT_API AEndScreenGameMode : public AGameMode
 {
 	GENERATED_BODY()
 	void LoadSaves();
+	FString LBName;
 public:
 	virtual void BeginPlay() override;
 	//Ask the player name for the LB

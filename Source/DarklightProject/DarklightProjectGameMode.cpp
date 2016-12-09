@@ -7,6 +7,7 @@
 #include "Engine/Blueprint.h"
 #include "DarklightProject/Bomb.h"
 #include "CheckPointPlant.h"
+#include "GameStateSaver.h"
 ADarklightProjectGameMode::ADarklightProjectGameMode()
 {
 	TrailQueryRate = 0.05f;
@@ -25,6 +26,8 @@ void ADarklightProjectGameMode::BeginPlay()
 	ComboStageIndex = 0;
 	CurrentComboPoints = 0;
 	PlayerScore = 0;
+	ChallengeType = EGameChallengeType::GC_STORY;
+	LastCheckPoint = nullptr;
 	//Set Timer for  trail collision check
 	GetWorld()->GetTimerManager().SetTimer(TrailCheckTimer, this, &ADarklightProjectGameMode::CheckTrailCollisions, TrailQueryRate, true);
 	//Subscribe to the player death event
@@ -40,49 +43,41 @@ void ADarklightProjectGameMode::BeginPlay()
 		SavedPoints.Add(TArray<FTrailPoint>());
 	}
 	LoadSave();
-	//Erase old save
-	//UDarklightSaveGame* SaveGameInstance = Cast<UDarklightSaveGame>(UGameplayStatics::CreateSaveGameObject(UDarklightSaveGame::StaticClass()));
-	//UGameplayStatics::SaveGameToSlot(SaveGameInstance, SaveGameInstance->SaveSlotName, 1);
 
 }
 
 void ADarklightProjectGameMode::EndGame_Implementation()
 {
+	SaveGame();
 	UGameplayStatics::OpenLevel(GetWorld(), "EndMenuLevel");
 }
 
 
 
-void ADarklightProjectGameMode::HandlePlayerDeath()
+void ADarklightProjectGameMode::HandlePlayerDeath_Implementation()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Player Died"), );
 	UGameplayStatics::OpenLevel(this, FName(*GetWorld()->GetName()), false);
 }
 
-void ADarklightProjectGameMode::IncrementPlayerScore(float Increment)
+
+
+void ADarklightProjectGameMode::SaveCheckpoint_Implementation( ACheckPointPlant * CheckPoint)
 {
-	PlayerScore += Increment+ Increment*ActiveComboModifier;
+	LastCheckPoint = CheckPoint;
+	GameStateSaver::SaveInit(GetWorld(), CheckPoint, GetWorld()->StreamingLevelsPrefix, PlayerScore,ChallengeType);
 }
 
-void ADarklightProjectGameMode::SaveCheckpoint( ACheckPointPlant * CheckPoint)
+void ADarklightProjectGameMode::SaveGame()
 {
-	UDarklightSaveGame* SaveGameInstance = Cast<UDarklightSaveGame>(UGameplayStatics::CreateSaveGameObject(UDarklightSaveGame::StaticClass()));
-	SaveGameInstance->CheckPointID = CheckPoint->GetName();
-	SaveGameInstance->LevelName = GetWorld()->StreamingLevelsPrefix;
-	SaveGameInstance->PlayerScore = PlayerScore;
-	for (TObjectIterator<APlant> Itr; Itr; ++Itr)
-	{
-		if (Itr->GetWorld() != GetWorld())
-		{
-			continue;
-		}
-		SaveGameInstance->Activated.Add(Itr->GetName(),Itr->bActivated);
-	}
-	UGameplayStatics::SaveGameToSlot(SaveGameInstance, SaveGameInstance->SaveSlotName, 1);
+	SaveCheckpoint_Implementation(LastCheckPoint);
 }
 
 void ADarklightProjectGameMode::LoadSave()
 {
+	while (IsSaving())
+	{
+
+	}
 	UDarklightSaveGame* LoadGameInstance = Cast<UDarklightSaveGame>(UGameplayStatics::CreateSaveGameObject(UDarklightSaveGame::StaticClass()));
 	LoadGameInstance = Cast<UDarklightSaveGame>(UGameplayStatics::LoadGameFromSlot(LoadGameInstance->SaveSlotName, 1));
 	if (LoadGameInstance)
@@ -129,6 +124,13 @@ void ADarklightProjectGameMode::LoadSave()
 		UE_LOG(LogTemp, Warning, TEXT("No SaveFile Found"), );
 }
 
+bool ADarklightProjectGameMode::IsSaving()
+{
+
+	return !GameStateSaver::IsThreadFinished();
+}
+
+//* Trail Algorythm BEGIN*/
 void ADarklightProjectGameMode::ResetCombo()
 {
 	CurrentComboPoints = 0;
@@ -158,6 +160,10 @@ void ADarklightProjectGameMode::HandleTrailCollision_Implementation(FVector Cont
 			Player->bChargedUp = false;
 		}
 	}
+}
+void ADarklightProjectGameMode::IncrementPlayerScore(float Increment)
+{
+	PlayerScore += Increment + Increment*ActiveComboModifier;
 }
 void ADarklightProjectGameMode::AddComboPoint()
 {
@@ -270,3 +276,4 @@ void ADarklightProjectGameMode::CheckTrailCollisions()
 		Players[CurrentPlayerIndex]->bChargedUp = !bChargeUsed;
 	}
 }
+//* Trail Algorythm END*/

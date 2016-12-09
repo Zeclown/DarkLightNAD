@@ -25,6 +25,13 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combo Stats")
 	UParticleSystem* ParticleSystem;
 };
+UENUM(BlueprintType)
+enum class EGameChallengeType : uint8
+{
+	GC_STORY UMETA(DisplayName = "Story Mode"),
+	GC_RACE UMETA(DisplayName = "Race Mode"),
+	GC_SURVIVAL UMETA(DisplayName = "Survival Mode"),
+};
 //Structure representing a point in a player's trail
 USTRUCT(BlueprintType)
 struct FTrailPoint
@@ -50,7 +57,6 @@ protected:
 	FTimerHandle TrailCheckTimer;
 	//The handle of the timer for combo checking
 	FTimerHandle ComboCheckTimer;
-
 	TArray<ADarklightProjectCharacter*> Players;
 	//The number of combo points (Consecutive bombs created)
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly, Category = "Combo Mechanic")
@@ -66,6 +72,8 @@ protected:
 	int HighestCombo;
 	//The number of bomb currently in game
 	TArray<ABomb*> SpawnedBombs;
+	//Last Checkpoint we hit
+	ACheckPointPlant* LastCheckPoint;
 
 public:
 	ADarklightProjectGameMode();
@@ -74,14 +82,17 @@ public:
 	void EndGame();
 	UFUNCTION(BlueprintNativeEvent, Category = "Trail Algorythm")
 	void HandleTrailCollision(FVector ContactPoint, ADarklightProjectCharacter* Bomber);
-	UFUNCTION(BlueprintCallable, Category = "State")
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "State")
 	void HandlePlayerDeath();
 	UFUNCTION(BlueprintCallable,Category="Score")
 	void IncrementPlayerScore(float Increment);
-	UFUNCTION(BlueprintCallable, Category = "Save")
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Save")
 	void SaveCheckpoint(ACheckPointPlant* CheckPoint);
+	void SaveGame();
 	UFUNCTION(BlueprintCallable, Category = "Save")
 	void LoadSave();
+	UFUNCTION(BlueprintCallable, Category = "Save")
+	bool IsSaving();
 	//Function called by timer that reset the combo level and points of the player
 	void ResetCombo();
 	//Function called when a bomb is destroyed (so we can track the number of bomb currently in game)
@@ -112,6 +123,9 @@ public:
 	bool bDebugTrail;
 	UPROPERTY(EditDefaultsOnly, Category = "Trail Algorythm")
 	bool bDebugCombo;
+	//What is the current GameMode (Bad practice,that's what multiple GameModes class are for, should have made a better hierarchy)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "State")
+	EGameChallengeType ChallengeType;
 };
 
 

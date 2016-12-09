@@ -9,10 +9,10 @@ void UDarklightProjectLeaderboard::OrderScores()
 {
 	for (int i = 0; i < ScoreEntries.Num()-1; i++)
 	{
-		if (ScoreEntries[i].Score > ScoreEntries[i + 1].Score)
+		if (ScoreEntries[i].Score < ScoreEntries[i + 1].Score)
 		{
 			ScoreEntries.Swap(i, i + 1);
-			i = 0;
+			i = -1;
 		}
 	}
 }
