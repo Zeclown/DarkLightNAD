@@ -1,10 +1,15 @@
 Event	ID	Name			Wwise Object Path	Notes
 	21544190	OnClick			\Default Work Unit\OnClick	
 	948631664	Explode			\Default Work Unit\Explode	
+	2043178279	BirdScream			\Default Work Unit\BirdScream	
 	4166407614	Activate			\Default Work Unit\Activate	
+
+Effect plug-ins	ID	Name	Type				Notes
+	484890516	Church_Small_Wood	Wwise RoomVerb			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	322358094	Spark2	E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\Spark2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Spark2		77812
+	329559827	BirdScream	E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\BirdScream_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\BirdScream		366408
 	693335126	MenuConfirm2	E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\MenuConfirm2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\MenuConfirm2		344680
-	861164076	Activate	E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\Activate_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Activate		103580
+	805675645	PlanteActivation	E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\PlanteActivation_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlanteActivation		340876
 

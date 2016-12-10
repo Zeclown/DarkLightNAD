@@ -7,12 +7,23 @@
 					<PropertyList>
 						<Property Name="Pitch" Type="int32">
 							<ValueList>
-								<Value>430</Value>
+								<Value>80</Value>
 							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{36D330DC-B22C-44EA-8B6A-02A57F5F6A3D}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="400"/>
+											<Property Name="Min" Type="Real64" Value="-200"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-1</Value>
+								<Value>3</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -20,37 +31,28 @@
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
 						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+							<ObjectRef Name="Church_Small_Wood" ID="{940CCB47-F031-4C6A-B0E6-726CAC418C02}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
 						<AudioFileSource Name="Spark2" ID="{A06F1483-8092-407B-AFF8-963A4573DCE0}" ShortID="322358094">
+							<PropertyList>
+								<Property Name="VolumeOffset" Type="Real64">
+									<ValueList>
+										<Value>2.5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<Language>SFX</Language>
 							<AudioFile>Clean\Spark2.wav</AudioFile>
 						</AudioFileSource>
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="Spark2" ID="{A06F1483-8092-407B-AFF8-963A4573DCE0}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="Activate" ID="{6C4CA9AD-0D37-431C-876B-A5E89CB909F3}" ShortID="687038460" Type="SoundFX">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="Activate" ID="{8171AF8C-76D4-4E58-BDE4-20104CBAEF60}" ShortID="861164076">
-							<Language>SFX</Language>
-							<AudioFile>Clean\Activate.wav</AudioFile>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="Activate" ID="{8171AF8C-76D4-4E58-BDE4-20104CBAEF60}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="MenuConfirm2" ID="{6F9AB21D-5597-4D10-9F40-6EF35355A3B7}" ShortID="1016268217" Type="SoundFX">
@@ -70,6 +72,149 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="MenuConfirm2" ID="{E713BC9F-94A1-48C8-9ED4-454F5E9ADC26}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="PlanteActivation" ID="{086694DF-F551-46A6-9ABF-7862DB345752}" ShortID="191958082" Type="SoundFX">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>34</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>6</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{E858F3D0-34A8-4D0D-9813-6EE0F59B4D6C}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="300"/>
+											<Property Name="Min" Type="Real64" Value="-300"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="PlanteActivation" ID="{BE23FA7A-EE5C-4B95-A1E3-4AE883E10C7E}" ShortID="805675645">
+							<Language>SFX</Language>
+							<AudioFile>Clean\PlanteActivation.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="PlanteActivation" ID="{BE23FA7A-EE5C-4B95-A1E3-4AE883E10C7E}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="BirdScream" ID="{75D32589-9989-4806-8B71-73740237CC8B}" ShortID="810403721" Type="SoundFX">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="BirdScream" ID="{59D265ED-3160-456F-8C55-90520A4D0C84}" ShortID="329559827">
+							<Language>SFX</Language>
+							<AudioFile>Clean\BirdScream.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="BirdScream" ID="{59D265ED-3160-456F-8C55-90520A4D0C84}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Musique_ete" ID="{BEAF8956-9488-43E3-BDC7-78354DEC49DF}" ShortID="478325576" Type="SoundFX">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>27</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>50</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-3</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
+						</Reference>
+						<Reference Name="Effect0" CompanyID="4095" PluginID="65535" PluginType="15">
+							<ObjectRef Name="Large_Bright_Chamber1" ID="{0BFA2291-5716-4759-AC24-F59D29E8F2E4}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Musique_ete" ID="{47BFC0D3-3AD7-45C9-9547-ECC6A3E70561}" ShortID="31865556">
+							<Language>SFX</Language>
+							<AudioFile>Clean\Musique_ete.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Musique_ete" ID="{47BFC0D3-3AD7-45C9-9547-ECC6A3E70561}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Musique_Boss" ID="{B4D66204-F5DD-4443-9BA3-78129C75DA89}" ShortID="518918809" Type="SoundFX">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-30</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-3</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+							<ObjectRef Name="Dirty_Washing_Machine" ID="{824764DD-7364-411D-AF50-DEDF8E3DCC48}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Musique_Boss" ID="{66E5C941-E079-4D2C-98E9-6D3238A7B0BE}" ShortID="426980613">
+							<Language>SFX</Language>
+							<AudioFile>Clean\Musique_Boss.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Musique_Boss" ID="{66E5C941-E079-4D2C-98E9-6D3238A7B0BE}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

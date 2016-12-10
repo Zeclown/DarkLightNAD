@@ -6,8 +6,9 @@
 				<SoundBank Name="Darklight" ID="{F8745EFD-8F48-48C5-A7FF-7FE350507807}">
 					<ObjectInclusionList>
 						<ObjectRef Name="OnClick" ID="{A829C3D3-3BC1-4068-8DC8-78A8194D957C}" WorkUnitID="{050302A4-0773-412F-8C50-B21709B4A107}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="BirdScream" ID="{FF99A87F-39C5-4086-A5E9-A64BABC443F7}" WorkUnitID="{050302A4-0773-412F-8C50-B21709B4A107}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Explode" ID="{5090B112-7CD0-421E-A946-64B1BB244ABD}" WorkUnitID="{050302A4-0773-412F-8C50-B21709B4A107}" Filter="7" Origin="Manual"/>
-						<ObjectRef Name="Activate" ID="{6C4CA9AD-0D37-431C-876B-A5E89CB909F3}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Activate" ID="{C126C8BD-BE7F-47FE-8EC7-27A2AD52425F}" WorkUnitID="{050302A4-0773-412F-8C50-B21709B4A107}" Filter="7" Origin="Manual"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
