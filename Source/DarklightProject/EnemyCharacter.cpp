@@ -6,8 +6,8 @@
 // Sets default values
 AEnemyCharacter::AEnemyCharacter()
 {
-
-
+	MaxHealthPoint = 60;
+	HealthPoint = MaxHealthPoint;
 }
 
 // Called when the game starts or when spawned
@@ -15,8 +15,8 @@ void AEnemyCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	bDead = false;
-	MaxHealthPoint = 60;
-	HealthPoint = MaxHealthPoint;
+	//MaxHealthPoint = 60;
+	//HealthPoint = MaxHealthPoint;
 }
 
 float AEnemyCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEvent, class AController * EventInstigator, class AActor * DamageCauser)
@@ -37,5 +37,9 @@ bool AEnemyCharacter::GetBDead() {
 void AEnemyCharacter::SetMaxHealthPoint(float param) {
 	MaxHealthPoint = param;
 	HealthPoint = MaxHealthPoint;
+}
+
+float AEnemyCharacter::GetHealthPoint() {
+	return HealthPoint;
 }
 
