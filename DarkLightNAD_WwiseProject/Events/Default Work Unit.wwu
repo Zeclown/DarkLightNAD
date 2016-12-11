@@ -62,17 +62,75 @@
 				</Event>
 				<Event Name="Musique" ID="{68CA7AC5-61AF-45E6-B22F-250F3D5136B8}">
 					<ChildrenList>
-						<Action Name="Play" ID="{0C2C15C0-D2CB-49D6-8FAF-D5478D08B993}" ShortID="545844981" Type="Play" Scope="One" Global="false">
+						<Action Name="Play" ID="{2F5AC86E-8444-4862-A6E5-C8F227ED6BF5}" ShortID="932286297" Type="Play" Scope="One" Global="false">
 							<ElementList>
-								<Element ID="{F12DFDE8-F55D-48FA-9FF8-1667F6C9C877}" Global="false">
+								<Element ID="{39E992B0-405F-4A4B-96E3-B495011D15FC}" Global="false">
+									<ObjectRef Name="Musique_Boss" ID="{B4D66204-F5DD-4443-9BA3-78129C75DA89}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+						<Action Name="Play" ID="{A89C9244-D46A-4399-B3B6-0923E8C3F6A9}" ShortID="404023184" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{E163CCC3-E8FF-44DA-AB0C-E01500FFB0DA}" Global="false">
 									<ObjectRef Name="Musique_ete" ID="{BEAF8956-9488-43E3-BDC7-78354DEC49DF}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
 								</Element>
 							</ElementList>
 						</Action>
-						<Action Name="Play" ID="{C3F6D2C9-2C5F-41BA-BCCA-F8ABEA1DE6EC}" ShortID="499857969" Type="Play" Scope="One" Global="false">
+						<Action Name="Play" ID="{37065C01-865B-436C-9D71-732945525EF0}" ShortID="81393890" Type="Play" Scope="One" Global="false">
 							<ElementList>
-								<Element ID="{AF703F6C-502E-4831-99D7-2466C19CD185}" Global="false">
-									<ObjectRef Name="Musique_Boss" ID="{B4D66204-F5DD-4443-9BA3-78129C75DA89}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								<Element ID="{C492B92C-22E8-47F3-90F8-9FB4986EA16A}" Global="false">
+									<ObjectRef Name="Musique_Hiver" ID="{AA5703AD-C25C-48ED-B875-64D418453DC5}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Hero_Walk" ID="{6E9FFB07-F4F8-4804-A1D3-63FDF29CBFED}">
+					<ChildrenList>
+						<Action Name="Play" ID="{A3D8A646-C182-42EB-846B-08C2F4BF1D74}" ShortID="622845397" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{575991FC-27AD-496C-A8ED-7F189D666D25}" Global="false">
+									<ObjectRef Name="Step_Walk" ID="{40090F43-71CB-4F4D-B238-C6D9261E4626}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Hero_Trail" ID="{BF803433-0A99-4924-8FF2-A0B782EDA685}">
+					<ChildrenList>
+						<Action Name="Play" ID="{2EE517A4-38E6-4A09-A59B-46DB6F998623}" ShortID="1005683910" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{86237E7A-9B89-4E5B-8563-AEDAAFF98FAB}" Global="false">
+									<ObjectRef Name="Sparkle" ID="{FA97BA50-A843-419B-8A31-92BD155347C9}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Hero_GetHit" ID="{0795AEE1-699A-40DB-A3FC-29D600E935D1}">
+					<ChildrenList>
+						<Action Name="Play" ID="{FD3CB2AB-B17F-4548-8831-53872ED020D1}" ShortID="284026716" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{257CB2C2-361D-44D1-9ABA-3D5D30C8CBE4}" Global="false">
+									<ObjectRef Name="HeroDamage" ID="{632A9159-9773-4EC1-800A-08478CD63DC6}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Ambiance" ID="{DD3B00A2-C473-4084-BA64-7B6E11BCECCC}">
+					<ChildrenList>
+						<Action Name="Play" ID="{1189FF0A-4C7B-4774-9C29-CAC1552EFDB0}" ShortID="425503526" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{1ECD469C-A8C7-445E-A7AA-B0A437F5AB9B}" Global="false">
+									<ObjectRef Name="Ambiance_Birds" ID="{7C8CDC56-A185-4DFD-A675-75DDDBFA3EED}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+						<Action Name="Play" ID="{2E9F3348-2A36-4781-B219-825C5734AB9B}" ShortID="777312484" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{F7A0374D-D0AC-4F63-8F73-3357B9B41DF4}" Global="false">
+									<ObjectRef Name="Wind" ID="{0B1BB672-A8B7-4E93-98BA-7CF858C42FA2}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
 								</Element>
 							</ElementList>
 						</Action>
