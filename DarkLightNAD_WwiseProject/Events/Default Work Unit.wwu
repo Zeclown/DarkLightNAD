@@ -14,30 +14,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Activate" ID="{C126C8BD-BE7F-47FE-8EC7-27A2AD52425F}">
-					<ChildrenList>
-						<Action Name="Play" ID="{1CC86300-F85F-4E43-94F9-361A9234B2EC}" ShortID="695101219" Type="Play" Scope="One" Global="false">
-							<PropertyList>
-								<Property Name="Pitch" Type="int32">
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{11824033-1DBF-4EDA-A240-8156B059597F}">
-												<PropertyList>
-													<Property Name="Enabled" Type="bool" Value="True"/>
-												</PropertyList>
-											</Modifier>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
-							</PropertyList>
-							<ElementList>
-								<Element ID="{CFC0B84D-E879-486C-A12E-5A8BE7CA54B5}" Global="false">
-									<ObjectRef Name="PlanteActivation" ID="{086694DF-F551-46A6-9ABF-7862DB345752}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
-								</Element>
-							</ElementList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="OnClick" ID="{A829C3D3-3BC1-4068-8DC8-78A8194D957C}">
 					<ChildrenList>
 						<Action Name="Play" ID="{0C1D1770-7349-4828-B63F-E197D73E9A39}" ShortID="321158708" Type="Play" Scope="One" Global="false">
@@ -131,6 +107,137 @@
 							<ElementList>
 								<Element ID="{F7A0374D-D0AC-4F63-8F73-3357B9B41DF4}" Global="false">
 									<ObjectRef Name="Wind" ID="{0B1BB672-A8B7-4E93-98BA-7CF858C42FA2}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Menu_select" ID="{DA9D8499-B00A-4F73-9FC4-D7A666DBDDB6}">
+					<ChildrenList>
+						<Action Name="Play" ID="{6C6F1ABD-AA5E-4B9B-AC7D-61F65940FA2E}" ShortID="71648561" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{060EB3A5-9543-41B5-9C69-61761D2069B2}" Global="false">
+									<ObjectRef Name="MenuSelect" ID="{268119BF-3EA5-4C8F-A42C-B988E152E015}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="BirdWingFlap" ID="{D3BB35E6-996F-4BB8-BE6D-95AC673B5D0D}">
+					<ChildrenList>
+						<Action Name="Play" ID="{5D5F716C-1BEF-465D-B0AA-5D1BE30FD31C}" ShortID="985251718" Type="Play" Scope="One" Global="false">
+							<PropertyList>
+								<Property Name="FadeCurve" Type="int16" Value="3"/>
+							</PropertyList>
+							<ElementList>
+								<Element ID="{71C8BB1C-8FE7-44FA-9026-1278A03044D4}" Global="false">
+									<ObjectRef Name="Bird_WingFlap" ID="{B1773FF2-8299-43CC-9DA1-88177B5C4DBB}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Crowsound" ID="{DF710AE2-619C-4FC6-8699-E49855D7C77A}">
+					<ChildrenList>
+						<Action Name="Play" ID="{E5EB15B9-D5A9-48D5-9610-B251DE94512A}" ShortID="890254752" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{8553632A-C299-402E-8258-2BD82085BEFA}" Global="false">
+									<ObjectRef Name="BossBird_Crowsound" ID="{AAF55057-350A-42DF-A0B2-43D10EFA687B}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Bug_Walk" ID="{43A3D930-413B-4740-BE47-EAB879327605}">
+					<ChildrenList>
+						<Action Name="Play" ID="{3B5C2517-76CB-420C-B5A1-D5CEC70476B0}" ShortID="359069360" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{797F9E48-5F12-4358-9955-7CE18C801DB6}" Global="false">
+									<ObjectRef Name="BugWalk" ID="{0EDFBC3C-0108-4AE0-A248-8F853F7680E7}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Bug_Attack" ID="{C34214C0-E405-4B46-BB34-D5F26EB72751}">
+					<ChildrenList>
+						<Action Name="Play" ID="{0EB29749-02F0-4170-8CEB-98C62FBD045F}" ShortID="969805901" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{4F83BAA9-BBB4-4CF3-BA17-9197E67CA6D7}" Global="false">
+									<ObjectRef Name="Bug_Attack" ID="{9A828A8E-B585-435F-A89A-60A9DBC6A6D8}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="WinterPlant_Activate" ID="{F50D1F61-9BB9-4880-A726-EB25893B6969}">
+					<ChildrenList>
+						<Action Name="Play" ID="{BD578525-CC41-4911-A63A-AAA734E55AAF}" ShortID="90576865" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{4516612C-DC2D-4756-8E15-28F189D580BB}" Global="false">
+									<ObjectRef Name="WinterPlantActivation" ID="{5F53B939-3495-4BE4-8B68-EF944EE92CFD}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MainMenu_Select" ID="{CC798573-B624-48F5-899D-7A4A40924FA9}">
+					<ChildrenList>
+						<Action Name="Play" ID="{557BF710-9ABC-44B6-8DF7-F07AEBB42FCD}" ShortID="1064129811" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{68C48431-3651-45AC-8B91-4C80C127F462}" Global="false">
+									<ObjectRef Name="MainMenu_Sparkle" ID="{D4586391-C5BE-4F78-82CB-7B3A4457CD6C}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+						<Action Name="Play" ID="{3B47C924-378D-4165-AD11-84EB0A4722FA}" ShortID="434716992" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{776F252F-8EC5-4D3D-9254-E90B6474962A}" Global="false">
+									<ObjectRef Name="MenuSelect" ID="{268119BF-3EA5-4C8F-A42C-B988E152E015}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Pause" ID="{C059BA0A-7042-4D4F-9634-45D13B2FD714}">
+					<ChildrenList>
+						<Action Name="Play" ID="{EFE5D8E8-411A-41D1-A9AA-B46F1D260B40}" ShortID="571100518" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{603DF0B4-08B9-4087-81FE-F2706EE35C4C}" Global="false">
+									<ObjectRef Name="Pause" ID="{EDBA19F1-A008-45C9-BE20-91CCA6751B04}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="GateOpen" ID="{BC75A2A6-E22B-40B4-8170-416422545DBC}">
+					<ChildrenList>
+						<Action Name="Play" ID="{60CC2A84-6D07-466F-B6E2-07F5C85BF219}" ShortID="663981693" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{A0B9D802-637D-4648-90B4-11AF97CCB21B}" Global="false">
+									<ObjectRef Name="GateOpen" ID="{9E0EC6F0-5F4D-4F4A-8055-66D7A0FAA1D9}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Hero_Jump" ID="{7BD004B0-4A55-4ED8-8F26-BA7FF0B12E15}">
+					<ChildrenList>
+						<Action Name="Play" ID="{F27E8C6B-E469-4813-B30C-339D661584C4}" ShortID="853894971" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{79B8D7B7-4052-4F3A-B89D-30C67734A240}" Global="false">
+									<ObjectRef Name="HeroJump" ID="{3CCDE688-D9D3-41FA-9044-7A0AF8D73A6F}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Mainmenu_Music" ID="{498EDD5F-2CEB-423E-A3DD-D968E360F3D3}">
+					<ChildrenList>
+						<Action Name="Play" ID="{07D1B648-CA6E-4B4D-95D8-5DC64ABAF7E5}" ShortID="432971040" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{BF15DF26-0493-46D7-B4C2-2D2AA0F2B2B7}" Global="false">
+									<ObjectRef Name="MainMenu_Music" ID="{38C5F9D8-E4E1-4F39-A23D-D5E5BD45825A}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
 								</Element>
 							</ElementList>
 						</Action>

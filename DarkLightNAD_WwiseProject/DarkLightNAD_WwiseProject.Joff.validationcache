@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ValidationCache Version="1" SchemaVersion="75">
-	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="3708606844" DateHigh="30560929"/>
+	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="3904866275" DateHigh="30561141"/>
 	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\Attenuations\Default Work Unit.wwu" DateLow="1196434486" DateHigh="30558825"/>
 	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\Audio Devices\Default Work Unit.wwu" DateLow="1196804507" DateHigh="30558825"/>
 	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\Control Surface Sessions\Default Work Unit.wwu" DateLow="3194396920" DateHigh="30558828"/>
 	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\Conversion Settings\Default Work Unit.wwu" DateLow="1196624497" DateHigh="30558825"/>
 	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\Conversion Settings\Factory Conversion Settings.wwu" DateLow="430058496" DateHigh="30558808"/>
-	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\DarkLightNAD_WwiseProject.Joff.wsettings" DateLow="4044061117" DateHigh="30560932"/>
+	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\DarkLightNAD_WwiseProject.Joff.wsettings" DateLow="3905046285" DateHigh="30561141"/>
 	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\DarkLightNAD_WwiseProject.wproj" DateLow="1195384426" DateHigh="30558825"/>
 	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1196494489" DateHigh="30558825"/>
 	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\Effects\Default Work Unit.wwu" DateLow="1196084466" DateHigh="30558825"/>
 	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\Effects\Factory Effects.wwu" DateLow="430768537" DateHigh="30558808"/>
-	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\Events\Default Work Unit.wwu" DateLow="3708696849" DateHigh="30560929"/>
+	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\Events\Default Work Unit.wwu" DateLow="3905116289" DateHigh="30561141"/>
 	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\Game Parameters\Default Work Unit.wwu" DateLow="1196014462" DateHigh="30558825"/>
 	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1196314479" DateHigh="30558825"/>
 	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1195644441" DateHigh="30558825"/>
@@ -22,7 +22,7 @@
 	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\Queries\Factory Queries.wwu" DateLow="430028495" DateHigh="30558808"/>
 	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="3708776853" DateHigh="30560929"/>
 	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1196194472" DateHigh="30558825"/>
-	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\States\Default Work Unit.wwu" DateLow="1195884454" DateHigh="30558825"/>
+	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\States\Default Work Unit.wwu" DateLow="3917637005" DateHigh="30561141"/>
 	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\Switches\Default Work Unit.wwu" DateLow="1195824451" DateHigh="30558825"/>
 	<ValidationCacheItem File="E:\Prototype_Repo\DarkLightNAD\DarkLightNAD_WwiseProject\Triggers\Default Work Unit.wwu" DateLow="1196374482" DateHigh="30558825"/>
 </ValidationCache>
