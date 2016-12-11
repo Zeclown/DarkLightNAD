@@ -16,10 +16,23 @@
 				</Event>
 				<Event Name="Activate" ID="{C126C8BD-BE7F-47FE-8EC7-27A2AD52425F}">
 					<ChildrenList>
-						<Action Name="Play" ID="{7A74CB1C-0D4E-4559-B837-AA655EA677CC}" ShortID="741849762" Type="Play" Scope="One" Global="false">
+						<Action Name="Play" ID="{1CC86300-F85F-4E43-94F9-361A9234B2EC}" ShortID="695101219" Type="Play" Scope="One" Global="false">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{11824033-1DBF-4EDA-A240-8156B059597F}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
 							<ElementList>
-								<Element ID="{5534BDBD-4C0D-4A25-B7AA-4FC4D17930BD}" Global="false">
-									<ObjectRef Name="Activate" ID="{6C4CA9AD-0D37-431C-876B-A5E89CB909F3}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								<Element ID="{CFC0B84D-E879-486C-A12E-5A8BE7CA54B5}" Global="false">
+									<ObjectRef Name="PlanteActivation" ID="{086694DF-F551-46A6-9ABF-7862DB345752}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
 								</Element>
 							</ElementList>
 						</Action>
@@ -31,6 +44,35 @@
 							<ElementList>
 								<Element ID="{807459E4-54ED-43A7-83B0-B4891FE0F0F2}" Global="false">
 									<ObjectRef Name="MenuConfirm2" ID="{6F9AB21D-5597-4D10-9F40-6EF35355A3B7}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="BirdScream" ID="{FF99A87F-39C5-4086-A5E9-A64BABC443F7}">
+					<ChildrenList>
+						<Action Name="Play" ID="{648042A2-F75D-485F-A244-05F828DD2297}" ShortID="460885247" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{8AA7AA24-5AB5-48A7-B944-AB6BF9CF4A35}" Global="false">
+									<ObjectRef Name="BirdScream" ID="{75D32589-9989-4806-8B71-73740237CC8B}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Musique" ID="{68CA7AC5-61AF-45E6-B22F-250F3D5136B8}">
+					<ChildrenList>
+						<Action Name="Play" ID="{0C2C15C0-D2CB-49D6-8FAF-D5478D08B993}" ShortID="545844981" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{F12DFDE8-F55D-48FA-9FF8-1667F6C9C877}" Global="false">
+									<ObjectRef Name="Musique_ete" ID="{BEAF8956-9488-43E3-BDC7-78354DEC49DF}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+								</Element>
+							</ElementList>
+						</Action>
+						<Action Name="Play" ID="{C3F6D2C9-2C5F-41BA-BCCA-F8ABEA1DE6EC}" ShortID="499857969" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{AF703F6C-502E-4831-99D7-2466C19CD185}" Global="false">
+									<ObjectRef Name="Musique_Boss" ID="{B4D66204-F5DD-4443-9BA3-78129C75DA89}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
 								</Element>
 							</ElementList>
 						</Action>
