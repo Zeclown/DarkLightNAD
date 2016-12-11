@@ -16,14 +16,14 @@
 	<Platform GUID="{6F9A87DC-F891-4DCE-9647-2B70879FBDA8}">
 		<Banks>
 			<Language ID="0">
-				<File Name="Darklight" Hash="1662617966" Timestamp="131258140103485022"/>
+				<File Name="Darklight" Hash="3261268039" Timestamp="131259529663108732"/>
 				<File Name="DarklightProject" Hash="2898286734" Timestamp="131249489713576197"/>
-				<File Name="Init" Hash="1264760835" Timestamp="131258140103975050"/>
+				<File Name="Init" Hash="1496162008" Timestamp="131259529663468753"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="3116698075" Timestamp="131258140104015053"/>
+				<File Name="" Hash="988215102" Timestamp="131259529663508755"/>
 			</Language>
 		</XMLInfo>
 	</Platform>
