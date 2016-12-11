@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{800B6C17-1996-4119-89D5-9973AF1581C1}" SchemaVersion="75">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{800B6C17-1996-4119-89D5-9973AF1581C1}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{800B6C17-1996-4119-89D5-9973AF1581C1}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="Musique" ID="{16291CB5-C6B8-4CF0-B098-AD9D264ED482}">
+					<ChildrenList>
+						<State Name="None" ID="{FC3CC7BF-E4EE-49BF-BE0E-A5B93A8B9001}"/>
+						<State Name="Summer" ID="{883A8F4F-748B-45CF-B426-54CC89D3E50C}"/>
+						<State Name="Winter" ID="{C10F6A2D-C0D7-4261-BB13-527FE822BEE7}"/>
+						<State Name="BossFight" ID="{E35E3B08-2548-4B93-8945-98E031EBD542}"/>
+					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="Summer" ID="{883A8F4F-748B-45CF-B426-54CC89D3E50C}"/>
+							<EndState Name="Winter" ID="{C10F6A2D-C0D7-4261-BB13-527FE822BEE7}"/>
+							<Time>10</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="Winter" ID="{C10F6A2D-C0D7-4261-BB13-527FE822BEE7}"/>
+							<EndState Name="BossFight" ID="{E35E3B08-2548-4B93-8945-98E031EBD542}"/>
+							<Time>3</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+					</TransitionList>
+				</StateGroup>
+				<StateGroup Name="Ambiance" ID="{0640C72A-7A7D-4E2B-8125-3E106B40710C}">
+					<ChildrenList>
+						<State Name="None" ID="{17DDE343-81C1-44FA-9740-AC331A0CF943}"/>
+						<State Name="Bird" ID="{82B9098E-F1AF-4559-BB7A-FD5DBA93BD17}"/>
+						<State Name="Wind" ID="{822D1722-99C0-4E46-901B-A508BA7D77F4}"/>
+					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="Bird" ID="{82B9098E-F1AF-4559-BB7A-FD5DBA93BD17}"/>
+							<EndState Name="Wind" ID="{822D1722-99C0-4E46-901B-A508BA7D77F4}"/>
+							<Time>5</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="Wind" ID="{822D1722-99C0-4E46-901B-A508BA7D77F4}"/>
+							<EndState Name="Bird" ID="{82B9098E-F1AF-4559-BB7A-FD5DBA93BD17}"/>
+							<Time>5</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+					</TransitionList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>

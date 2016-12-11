@@ -137,62 +137,157 @@
 						<ActiveSource Name="BirdScream" ID="{59D265ED-3160-456F-8C55-90520A4D0C84}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Musique_ete" ID="{BEAF8956-9488-43E3-BDC7-78354DEC49DF}" ShortID="478325576" Type="SoundFX">
+				<Sound Name="Wind" ID="{0B1BB672-A8B7-4E93-98BA-7CF858C42FA2}" ShortID="798773273" Type="SoundFX">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>180</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Wind" ID="{A4349765-2E46-423F-90EB-8640476EFAC0}" ShortID="673975641">
+							<Language>SFX</Language>
+							<AudioFile>Clean\Wind.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<StateInfo>
+						<StateGroupList>
+							<StateGroupInfo>
+								<StateGroupRef Name="Ambiance" ID="{0640C72A-7A7D-4E2B-8125-3E106B40710C}"/>
+							</StateGroupInfo>
+						</StateGroupList>
+						<CustomStateList>
+							<CustomState>
+								<StateRef Name="Bird" ID="{82B9098E-F1AF-4559-BB7A-FD5DBA93BD17}"/>
+								<State Name="Custom State" ID="{19A45879-6D02-4FA3-8908-5A5B8993683C}" ShortID="933884495">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64" Value="-96"/>
+									</PropertyList>
+								</State>
+							</CustomState>
+						</CustomStateList>
+					</StateInfo>
+					<ActiveSourceList>
+						<ActiveSource Name="Wind" ID="{A4349765-2E46-423F-90EB-8640476EFAC0}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Step_Walk" ID="{40090F43-71CB-4F4D-B238-C6D9261E4626}" ShortID="934586533" Type="SoundFX">
 					<PropertyList>
 						<Property Name="Highpass" Type="int16">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{7F70BA20-62E7-43E4-AFED-6E236D18A361}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="20"/>
+											<Property Name="Min" Type="Real64" Value="-20"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Lowpass" Type="int16">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{91C95BAF-98D1-4271-81BC-F3A982609264}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="20"/>
+											<Property Name="Min" Type="Real64" Value="-20"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{AEAF9A0B-E61C-4E22-8DB3-2F0EDE342222}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="300"/>
+											<Property Name="Min" Type="Real64" Value="-300"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
 							<ValueList>
 								<Value>1</Value>
 							</ValueList>
 						</Property>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-						<Property Name="Lowpass" Type="int16">
-							<ValueList>
-								<Value>27</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Pitch" Type="int32">
-							<ValueList>
-								<Value>50</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-3</Value>
-							</ValueList>
-						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
-						</Reference>
-						<Reference Name="Effect0" CompanyID="4095" PluginID="65535" PluginType="15">
-							<ObjectRef Name="Large_Bright_Chamber1" ID="{0BFA2291-5716-4759-AC24-F59D29E8F2E4}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="Musique_ete" ID="{47BFC0D3-3AD7-45C9-9547-ECC6A3E70561}" ShortID="31865556">
+						<AudioFileSource Name="Step_Walk" ID="{04FF55DC-02AF-4200-81EC-403F962B5E6C}" ShortID="851791896">
 							<Language>SFX</Language>
-							<AudioFile>Clean\Musique_ete.wav</AudioFile>
+							<AudioFile>Clean\Step_Walk.wav</AudioFile>
 						</AudioFileSource>
 					</ChildrenList>
 					<ActiveSourceList>
-						<ActiveSource Name="Musique_ete" ID="{47BFC0D3-3AD7-45C9-9547-ECC6A3E70561}" Platform="Linked"/>
+						<ActiveSource Name="Step_Walk" ID="{04FF55DC-02AF-4200-81EC-403F962B5E6C}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Musique_Boss" ID="{B4D66204-F5DD-4443-9BA3-78129C75DA89}" ShortID="518918809" Type="SoundFX">
+				<Sound Name="Sparkle" ID="{FA97BA50-A843-419B-8A31-92BD155347C9}" ShortID="1010798363" Type="SoundFX">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Sparkle" ID="{BD6E46B6-7D92-4C6B-93DB-A843C504711C}" ShortID="806022693">
+							<Language>SFX</Language>
+							<AudioFile>Clean\Sparkle.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Sparkle" ID="{BD6E46B6-7D92-4C6B-93DB-A843C504711C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Ambiance_Birds" ID="{7C8CDC56-A185-4DFD-A675-75DDDBFA3EED}" ShortID="155901537" Type="SoundFX">
 					<PropertyList>
+						<Property Name="InitialDelay" Type="Real64">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{15C44926-A5CB-49AE-9AAF-1FA2524212B1}">
+										<PropertyList>
+											<Property Name="Max" Type="Real64" Value="20"/>
+											<Property Name="Min" Type="Real64" Value="-20"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 						<Property Name="Pitch" Type="int32">
 							<ValueList>
-								<Value>-30</Value>
+								<Value>200</Value>
 							</ValueList>
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-3</Value>
+								<Value>-2</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -200,23 +295,363 @@
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
 						</Reference>
-						<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
-							<ObjectRef Name="Dirty_Washing_Machine" ID="{824764DD-7364-411D-AF50-DEDF8E3DCC48}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Ambiance_Birds" ID="{A5DC2B72-48AB-4339-8DD8-673098DDC6B4}" ShortID="128134621">
+							<Language>SFX</Language>
+							<AudioFile>Clean\Ambiance_Birds.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<StateInfo>
+						<StateGroupList>
+							<StateGroupInfo>
+								<StateGroupRef Name="Ambiance" ID="{0640C72A-7A7D-4E2B-8125-3E106B40710C}"/>
+							</StateGroupInfo>
+						</StateGroupList>
+						<CustomStateList>
+							<CustomState>
+								<StateRef Name="Wind" ID="{822D1722-99C0-4E46-901B-A508BA7D77F4}"/>
+								<State Name="Custom State" ID="{EDCD919A-D10A-4639-9AB5-87CC1FE4C15A}" ShortID="356111013">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64" Value="-96"/>
+									</PropertyList>
+								</State>
+							</CustomState>
+						</CustomStateList>
+					</StateInfo>
+					<ActiveSourceList>
+						<ActiveSource Name="Ambiance_Birds" ID="{A5DC2B72-48AB-4339-8DD8-673098DDC6B4}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="HeroDamage" ID="{632A9159-9773-4EC1-800A-08478CD63DC6}" ShortID="248342589">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="Musique_Boss" ID="{66E5C941-E079-4D2C-98E9-6D3238A7B0BE}" ShortID="426980613">
-							<Language>SFX</Language>
-							<AudioFile>Clean\Musique_Boss.wav</AudioFile>
-						</AudioFileSource>
+						<Sound Name="HeroGetHit" ID="{62DE86CA-E310-4A04-9079-73A918DE8280}" ShortID="118283446" Type="SoundFX">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{F597BDF8-878A-4028-BBC4-53FDA71EFC5C}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="50"/>
+													<Property Name="Min" Type="Real64" Value="-50"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="HeroGetHit" ID="{52F13FC7-E3A0-4A07-9428-31622DD232CF}" ShortID="183303421">
+									<Language>SFX</Language>
+									<AudioFile>Clean\HeroGetHit.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="HeroGetHit" ID="{52F13FC7-E3A0-4A07-9428-31622DD232CF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="HeroGetHit2" ID="{157BE54C-C1CF-4A4C-862F-6F43116C98B7}" ShortID="870479489" Type="SoundFX">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{217DB7E5-C28C-4FD7-A1EB-853E28FEA1D0}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="50"/>
+													<Property Name="Min" Type="Real64" Value="-50"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="HeroGetHit2" ID="{FBB040CC-2BA3-42CA-A667-0940C32AB82B}" ShortID="732468901">
+									<Language>SFX</Language>
+									<AudioFile>Clean\HeroGetHit2.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="HeroGetHit2" ID="{FBB040CC-2BA3-42CA-A667-0940C32AB82B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="HeroGetHit3" ID="{9F17C873-9F4F-41F5-8C1E-967E6774B975}" ShortID="1061223929" Type="SoundFX">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{9667F1CF-FC39-4D52-9401-6DE38C5060B7}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="50"/>
+													<Property Name="Min" Type="Real64" Value="-50"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="HeroGetHit3" ID="{B25EFED0-19B3-424F-8E70-49A977893164}" ShortID="813286973">
+									<Language>SFX</Language>
+									<AudioFile>Clean\HeroGetHit3.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="HeroGetHit3" ID="{B25EFED0-19B3-424F-8E70-49A977893164}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="Musique_Boss" ID="{66E5C941-E079-4D2C-98E9-6D3238A7B0BE}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="Musique" ID="{18D2A097-79DC-4072-B1FC-21D046E9868C}" ShortID="16904085">
+					<PropertyList>
+						<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Musique_ete" ID="{BEAF8956-9488-43E3-BDC7-78354DEC49DF}" ShortID="478325576" Type="SoundFX">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>25</Value>
+									</ValueList>
+								</Property>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>50</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
+								</Reference>
+								<Reference Name="Effect0" CompanyID="4095" PluginID="65535" PluginType="15">
+									<ObjectRef Name="Large_Bright_Chamber1" ID="{0BFA2291-5716-4759-AC24-F59D29E8F2E4}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="Effect1">
+									<Custom>
+										<Effect Name="Wwise Gain (Custom)" ID="{F0864DD9-2DD6-4C23-8F78-53E0CD1A0027}" ShortID="578988151" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+											<PropertyList>
+												<Property Name="FullBandGain" Type="Real32" Value="2"/>
+												<Property Name="LFEGain" Type="Real32" Value="-8"/>
+											</PropertyList>
+										</Effect>
+									</Custom>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Musique_ete" ID="{47BFC0D3-3AD7-45C9-9547-ECC6A3E70561}" ShortID="31865556">
+									<Language>SFX</Language>
+									<AudioFile>Clean\Musique_ete.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="Musique" ID="{16291CB5-C6B8-4CF0-B098-AD9D264ED482}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="Winter" ID="{C10F6A2D-C0D7-4261-BB13-527FE822BEE7}"/>
+										<State Name="Custom State" ID="{E58C9501-4738-4818-9B39-F13F90D09413}" ShortID="759008358">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-96"/>
+											</PropertyList>
+										</State>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="BossFight" ID="{E35E3B08-2548-4B93-8945-98E031EBD542}"/>
+										<State Name="Custom State" ID="{871A9FE9-F309-4CF8-AF1A-0732846BD862}" ShortID="411129860">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-96"/>
+											</PropertyList>
+										</State>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="Musique_ete" ID="{47BFC0D3-3AD7-45C9-9547-ECC6A3E70561}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Musique_Hiver" ID="{AA5703AD-C25C-48ED-B875-64D418453DC5}" ShortID="890399714" Type="SoundFX">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>26</Value>
+									</ValueList>
+								</Property>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>180</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Musique_Hiver" ID="{CDD43CCD-41FB-4104-9CEE-709D28DF82FB}" ShortID="452232292">
+									<Language>SFX</Language>
+									<AudioFile>Clean\Musique_Hiver.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="Musique" ID="{16291CB5-C6B8-4CF0-B098-AD9D264ED482}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="Summer" ID="{883A8F4F-748B-45CF-B426-54CC89D3E50C}"/>
+										<State Name="Custom State" ID="{C743455A-7F5D-4650-92D4-7B0E45FAF5D2}" ShortID="74248447">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-96"/>
+											</PropertyList>
+										</State>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="BossFight" ID="{E35E3B08-2548-4B93-8945-98E031EBD542}"/>
+										<State Name="Custom State" ID="{B0EAA6EF-C37D-48F7-BAE5-250F8ED1F8F1}" ShortID="711626651">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-96"/>
+											</PropertyList>
+										</State>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="Musique_Hiver" ID="{CDD43CCD-41FB-4104-9CEE-709D28DF82FB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Musique_Boss" ID="{B4D66204-F5DD-4443-9BA3-78129C75DA89}" ShortID="518918809" Type="SoundFX">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Dirty_Washing_Machine" ID="{824764DD-7364-411D-AF50-DEDF8E3DCC48}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Musique_Boss" ID="{66E5C941-E079-4D2C-98E9-6D3238A7B0BE}" ShortID="426980613">
+									<Language>SFX</Language>
+									<AudioFile>Clean\Musique_Boss.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="Musique" ID="{16291CB5-C6B8-4CF0-B098-AD9D264ED482}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="Winter" ID="{C10F6A2D-C0D7-4261-BB13-527FE822BEE7}"/>
+										<State Name="Custom State" ID="{72525B71-2427-4E79-9023-2F103619DFED}" ShortID="581972272">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-96"/>
+											</PropertyList>
+										</State>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="Summer" ID="{883A8F4F-748B-45CF-B426-54CC89D3E50C}"/>
+										<State Name="Custom State" ID="{51794781-BAAD-482D-B5FF-A7D8AB551542}" ShortID="429438006">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-96"/>
+											</PropertyList>
+										</State>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="Musique_Boss" ID="{66E5C941-E079-4D2C-98E9-6D3238A7B0BE}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
