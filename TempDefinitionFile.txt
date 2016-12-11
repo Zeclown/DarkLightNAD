@@ -1,2 +1,3 @@
 Darklight	"Explode"
 Darklight	"Activate"
+Darklight	"Hero_Walk"
