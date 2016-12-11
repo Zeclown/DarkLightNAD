@@ -8,7 +8,6 @@
 						<ObjectRef Name="OnClick" ID="{A829C3D3-3BC1-4068-8DC8-78A8194D957C}" WorkUnitID="{050302A4-0773-412F-8C50-B21709B4A107}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="BirdScream" ID="{FF99A87F-39C5-4086-A5E9-A64BABC443F7}" WorkUnitID="{050302A4-0773-412F-8C50-B21709B4A107}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Explode" ID="{5090B112-7CD0-421E-A946-64B1BB244ABD}" WorkUnitID="{050302A4-0773-412F-8C50-B21709B4A107}" Filter="7" Origin="Manual"/>
-						<ObjectRef Name="Activate" ID="{C126C8BD-BE7F-47FE-8EC7-27A2AD52425F}" WorkUnitID="{050302A4-0773-412F-8C50-B21709B4A107}" Filter="7" Origin="Manual"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
