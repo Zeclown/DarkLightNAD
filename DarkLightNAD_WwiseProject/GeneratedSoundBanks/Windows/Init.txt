@@ -1,3 +1,16 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	69765534	Musique			\Default Work Unit\Musique	
+	2981377429	Ambiance			\Default Work Unit\Ambiance	
+
+State	ID	Name	State Group			Notes
+	580146960	BossFight	Musique			
+	748895195	None	Musique			
+	2965343494	Winter	Musique			
+	3924562482	Summer	Musique			
+	748895195	None	Ambiance			
+	1537061107	Wind	Ambiance			
+	1544377644	Bird	Ambiance			
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	805203703	Master Secondary Bus			\Default Work Unit\Master Secondary Bus	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	

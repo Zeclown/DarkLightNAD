@@ -21,7 +21,6 @@
 			<ShortName>Darklight</ShortName>
 			<Path>Darklight.bnk</Path>
 			<IncludedEvents>
-				<Event Id="4166407614" Name="Activate" ObjectPath="\Events\Default Work Unit\Activate"/>
 				<Event Id="2043178279" Name="BirdScream" ObjectPath="\Events\Default Work Unit\BirdScream"/>
 				<Event Id="948631664" Name="Explode" ObjectPath="\Events\Default Work Unit\Explode"/>
 				<Event Id="21544190" Name="OnClick" ObjectPath="\Events\Default Work Unit\OnClick"/>
@@ -38,10 +37,6 @@
 				<File Id="693335126" Language="SFX">
 					<ShortName>Clean\MenuConfirm2.wav</ShortName>
 					<Path>SFX\Clean\MenuConfirm2_9E69E797.wem</Path>
-				</File>
-				<File Id="805675645" Language="SFX">
-					<ShortName>Clean\PlanteActivation.wav</ShortName>
-					<Path>SFX\Clean\PlanteActivation_9E69E797.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
