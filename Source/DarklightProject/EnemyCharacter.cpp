@@ -39,3 +39,7 @@ void AEnemyCharacter::SetMaxHealthPoint(float param) {
 	HealthPoint = MaxHealthPoint;
 }
 
+float AEnemyCharacter::GetHealthPoint() {
+	return HealthPoint;
+}
+
