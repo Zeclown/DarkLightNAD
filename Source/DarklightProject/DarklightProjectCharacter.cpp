@@ -51,6 +51,11 @@ void ADarklightProjectCharacter::BeginPlay()
 		UKismetMaterialLibrary::SetScalarParameterValue(GetWorld(), BodyMaterialCollection, "MaxGlowAmount", GlowOnClick);
 }
 
+void ADarklightProjectCharacter::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+}
+
 float ADarklightProjectCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser)
 {
 	const float ActualDamage = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);

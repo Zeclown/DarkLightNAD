@@ -35,7 +35,7 @@ protected:
 public:
 	ADarklightProjectCharacter();
 	virtual void BeginPlay();
-
+	virtual void Tick(float DeltaTime) override;
 	static FPlayerDeath& OnDeath() { return PlayerDeathEvent; }
 	UFUNCTION(BlueprintCallable, Category = "Player State")
 	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser) override;

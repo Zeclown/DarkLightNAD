@@ -5,16 +5,26 @@
 
 void AEndScreenGameMode::LoadSaves()
 {
+
 	//Load both saves
 	LastGameSave = Cast<UDarklightSaveGame>(UGameplayStatics::CreateSaveGameObject(UDarklightSaveGame::StaticClass()));
 	LastGameSave = Cast<UDarklightSaveGame>(UGameplayStatics::LoadGameFromSlot(LastGameSave->SaveSlotName, 1));
-
-	LBSave = Cast<UDarklightProjectLeaderboard>(UGameplayStatics::CreateSaveGameObject(UDarklightProjectLeaderboard::StaticClass()));
-	LBSave = Cast<UDarklightProjectLeaderboard>(UGameplayStatics::LoadGameFromSlot(LBSave->SaveSlotName, 1));
+	switch (LastGameSave->GameMode)
+	{
+	case 1:
+		LBName = "Race Leaderboard";
+		break;
+	case 2:
+		LBName = "Survival Leaderboard";
+		break;
+	default:
+		LBName= "Story Leaderboard";
+	}
+	LBSave = Cast<UDarklightProjectLeaderboard>(UGameplayStatics::LoadGameFromSlot(LBName, 1));
 	if (!LBSave)
 	{
 		LBSave = Cast<UDarklightProjectLeaderboard>(UGameplayStatics::CreateSaveGameObject(UDarklightProjectLeaderboard::StaticClass()));
-		UGameplayStatics::SaveGameToSlot(LBSave, LBSave->SaveSlotName, 1);
+		UGameplayStatics::SaveGameToSlot(LBSave, LBName, 1);
 	}
 }
 
@@ -29,6 +39,6 @@ void AEndScreenGameMode::BeginPlay()
 bool AEndScreenGameMode::ReceiveName_Implementation(const FString& Name)
 {
 	LBSave->AddScore(Name, LastGameSave->PlayerScore);
-	UGameplayStatics::SaveGameToSlot(LBSave, LBSave->SaveSlotName, 1);
+	UGameplayStatics::SaveGameToSlot(LBSave, LBName, 1);
 	return true;
 }
