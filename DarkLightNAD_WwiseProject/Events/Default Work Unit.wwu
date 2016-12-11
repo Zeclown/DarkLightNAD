@@ -243,6 +243,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Activate" ID="{C7E3EC7F-6A3D-4179-9151-8B8EEBE3A4E9}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

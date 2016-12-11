@@ -1,2 +1,5 @@
 Darklight	"Explode"
-Darklight	"Activate"
+Darklight	"Hero_Walk"
+Darklight	"WinterPlant_Activate"
+Darklight	"Pause"
+Darklight	"Musique"
