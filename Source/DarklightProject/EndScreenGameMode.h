@@ -16,6 +16,7 @@ class DARKLIGHTPROJECT_API AEndScreenGameMode : public AGameMode
 	FString LBName;
 public:
 	virtual void BeginPlay() override;
+	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 	//Ask the player name for the LB
 	UFUNCTION(BlueprintImplementableEvent,Category="Leaderboard")
 	void SubmitScore(bool isHighscore);

@@ -36,6 +36,12 @@ void AEndScreenGameMode::BeginPlay()
 	SubmitScore(LBSave && LBSave->SubmitScore(LastGameSave->PlayerScore));
 }
 
+void AEndScreenGameMode::EndPlay(const EEndPlayReason::Type EndPlayReason)
+{
+	//Assure destruction of last checkpoint for next Gameplay loop
+	UGameplayStatics::DeleteGameInSlot(LastGameSave->SaveSlotName, 1);
+}
+
 bool AEndScreenGameMode::ReceiveName_Implementation(const FString& Name)
 {
 	LBSave->AddScore(Name, LastGameSave->PlayerScore);
