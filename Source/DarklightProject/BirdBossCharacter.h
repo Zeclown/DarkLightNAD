@@ -16,7 +16,8 @@ BS_IDLECOMBAT UMETA(DisplayName = "Idle Combat"),
 BS_PECK UMETA(DisplayName = "Peck"),
 BS_DEAD UMETA(DisplayName = "Dead"),
 BS_WINDBLAST UMETA(DisplayName = "Windblast"),
-BS_SPAWNBUGS UMETA(DisplayName = "SpawnBugs")
+BS_SPAWNBUGS UMETA(DisplayName = "SpawnBugs"),
+BS_PAIN UMETA(DisplayName = "Pain")
 };
 UCLASS()
 class DARKLIGHTPROJECT_API ABirdBossCharacter : public AEnemyCharacter

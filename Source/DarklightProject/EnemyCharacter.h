@@ -35,9 +35,6 @@ public:
 	float GetHealthPoint();
 	UFUNCTION(BlueprintCallable, Category = "State")
 	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser) override;
-
-
-
-	
-	
+	UFUNCTION(BlueprintCallable, Category = "State")
+	float GetMaxHealthPoint();
 };
