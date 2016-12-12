@@ -7,7 +7,15 @@
 
 void UDarklightProjectGameInstance::Shutdown()
 {
+	
 	//Delete save file
 	UDarklightSaveGame* SaveGameInstance = Cast<UDarklightSaveGame>(UGameplayStatics::CreateSaveGameObject(UDarklightSaveGame::StaticClass()));
-	UGameplayStatics::SaveGameToSlot(SaveGameInstance, SaveGameInstance->SaveSlotName, 1);
+	UGameplayStatics::DeleteGameInSlot(SaveGameInstance->SaveSlotName, 1);
+
+}
+void UDarklightProjectGameInstance::Init()
+{
+	//Delete save file
+	UDarklightSaveGame* SaveGameInstance = Cast<UDarklightSaveGame>(UGameplayStatics::CreateSaveGameObject(UDarklightSaveGame::StaticClass()));
+	UGameplayStatics::DeleteGameInSlot(SaveGameInstance->SaveSlotName, 1);
 }

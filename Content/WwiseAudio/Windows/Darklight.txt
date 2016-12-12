@@ -4,6 +4,8 @@ Event	ID	Name			Wwise Object Path	Notes
 	948631664	Explode			\Default Work Unit\Explode	
 	1929327811	Mainmenu_Music			\Default Work Unit\Mainmenu_Music	
 	2043178279	BirdScream			\Default Work Unit\BirdScream	
+	2082409705	ChangeToWinter			\Default Work Unit\ChangeToWinter	
+	3010485277	ChangeToBoss			\Default Work Unit\ChangeToBoss	
 	3081493535	Hero_Walk			\Default Work Unit\Hero_Walk	
 	3092587493	Pause			\Default Work Unit\Pause	
 	3269047257	ChangeToSummer			\Default Work Unit\ChangeToSummer	

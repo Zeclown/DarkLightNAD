@@ -3,27 +3,27 @@
 	<Platform GUID="{63E789B2-B663-4656-86E0-426EB0178632}">
 		<Banks>
 			<Language ID="0">
-				<File Name="Darklight" Hash="3426551472" Timestamp="131259588046592661"/>
+				<File Name="Darklight" Hash="3376953795" Timestamp="131259693081975835"/>
 				<File Name="Init" Hash="388981464" Timestamp="131259544747794327"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="1715973617" Timestamp="131259588046883399"/>
+				<File Name="" Hash="945819817" Timestamp="131259693082331746"/>
 			</Language>
 		</XMLInfo>
 	</Platform>
 	<Platform GUID="{6F9A87DC-F891-4DCE-9647-2B70879FBDA8}">
 		<Banks>
 			<Language ID="0">
-				<File Name="Darklight" Hash="3426551472" Timestamp="131259588052627887"/>
+				<File Name="Darklight" Hash="3376953795" Timestamp="131259693086735255"/>
 				<File Name="DarklightProject" Hash="2898286734" Timestamp="131249489713576197"/>
 				<File Name="Init" Hash="3597150790" Timestamp="131259544754175895"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="2459927687" Timestamp="131259588052770548"/>
+				<File Name="" Hash="2918279451" Timestamp="131259693086850565"/>
 			</Language>
 		</XMLInfo>
 	</Platform>

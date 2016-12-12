@@ -23,6 +23,7 @@ ADarklightProjectGameMode::ADarklightProjectGameMode()
 void ADarklightProjectGameMode::BeginPlay()
 {
 	Super::BeginPlay();
+	bFirstLoad = true;
 	ComboStageIndex = 0;
 	CurrentComboPoints = 0;
 	PlayerScore = 0;
@@ -43,7 +44,7 @@ void ADarklightProjectGameMode::BeginPlay()
 		SavedPoints.Add(TArray<FTrailPoint>());
 	}
 	LoadSave();
-
+	//OnGameLoaded();
 }
 
 void ADarklightProjectGameMode::EndGame_Implementation()
@@ -83,6 +84,7 @@ void ADarklightProjectGameMode::LoadSave()
 	if (LoadGameInstance)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Save File detected"), );
+		bFirstLoad = false;
 		PlayerScore = LoadGameInstance->PlayerScore;
 		//Get all the plants currently in the level
 		TArray<APlant*> LevelPlants;

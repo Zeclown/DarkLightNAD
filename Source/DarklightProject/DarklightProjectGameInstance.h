@@ -14,6 +14,6 @@ class DARKLIGHTPROJECT_API UDarklightProjectGameInstance : public UGameInstance
 	GENERATED_BODY()
 public:
 		void Shutdown() override;
-	
+		void Init() override;
 	
 };

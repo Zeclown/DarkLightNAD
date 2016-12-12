@@ -75,6 +75,7 @@ protected:
 	//Last Checkpoint we hit
 	ACheckPointPlant* LastCheckPoint;
 
+
 public:
 	ADarklightProjectGameMode();
 	virtual void BeginPlay() override;
@@ -88,6 +89,8 @@ public:
 	void IncrementPlayerScore(float Increment);
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Save")
 	void SaveCheckpoint(ACheckPointPlant* CheckPoint);
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Save")
+	void OnGameLoaded();
 	void SaveGame();
 	UFUNCTION(BlueprintCallable, Category = "Save")
 	void LoadSave();
@@ -126,6 +129,9 @@ public:
 	//What is the current GameMode (Bad practice,that's what multiple GameModes class are for, should have made a better hierarchy)
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "State")
 	EGameChallengeType ChallengeType;
+	//FALSE if a checkpoint/save was found
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "State")
+	bool bFirstLoad;
 };
 
 

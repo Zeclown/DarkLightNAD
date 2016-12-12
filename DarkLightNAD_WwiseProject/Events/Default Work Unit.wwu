@@ -260,6 +260,26 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="ChangeToBoss" ID="{9AC279E8-2CFE-4461-89B7-36470B23A8C5}">
+					<ChildrenList>
+						<Action Name="Set State" ID="{8247CA83-1D96-4E6F-B552-E9E93AAB75F3}" ShortID="788914834" Type="SetState" Scope="All" Global="true">
+							<SetItemParam>
+								<Group Name="Musique" ID="{16291CB5-C6B8-4CF0-B098-AD9D264ED482}"/>
+								<GroupItem Name="BossFight" ID="{E35E3B08-2548-4B93-8945-98E031EBD542}"/>
+							</SetItemParam>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="ChangeToWinter" ID="{303CA2BD-2ADF-47F9-B219-140F36542626}">
+					<ChildrenList>
+						<Action Name="Set State" ID="{EE955BCA-BB94-4F96-AC1E-9C6A0017DB20}" ShortID="842296414" Type="SetState" Scope="All" Global="true">
+							<SetItemParam>
+								<Group Name="Musique" ID="{16291CB5-C6B8-4CF0-B098-AD9D264ED482}"/>
+								<GroupItem Name="Winter" ID="{C10F6A2D-C0D7-4261-BB13-527FE822BEE7}"/>
+							</SetItemParam>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -22,7 +22,9 @@
 			<Path>Darklight.bnk</Path>
 			<IncludedEvents>
 				<Event Id="2043178279" Name="BirdScream" ObjectPath="\Events\Default Work Unit\BirdScream"/>
+				<Event Id="3010485277" Name="ChangeToBoss" ObjectPath="\Events\Default Work Unit\ChangeToBoss"/>
 				<Event Id="3269047257" Name="ChangeToSummer" ObjectPath="\Events\Default Work Unit\ChangeToSummer"/>
+				<Event Id="2082409705" Name="ChangeToWinter" ObjectPath="\Events\Default Work Unit\ChangeToWinter"/>
 				<Event Id="948631664" Name="Explode" ObjectPath="\Events\Default Work Unit\Explode"/>
 				<Event Id="3677793184" Name="GateOpen" ObjectPath="\Events\Default Work Unit\GateOpen"/>
 				<Event Id="3081493535" Name="Hero_Walk" ObjectPath="\Events\Default Work Unit\Hero_Walk"/>
