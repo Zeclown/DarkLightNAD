@@ -234,6 +234,12 @@
 				</Event>
 				<Event Name="Mainmenu_Music" ID="{498EDD5F-2CEB-423E-A3DD-D968E360F3D3}">
 					<ChildrenList>
+						<Action Name="Set State" ID="{005336F4-840A-4971-95F4-E496712F4ED8}" ShortID="992955918" Type="SetState" Scope="All" Global="true">
+							<SetItemParam>
+								<Group Name="Musique" ID="{16291CB5-C6B8-4CF0-B098-AD9D264ED482}"/>
+								<GroupItem Name="Summer" ID="{883A8F4F-748B-45CF-B426-54CC89D3E50C}"/>
+							</SetItemParam>
+						</Action>
 						<Action Name="Play" ID="{07D1B648-CA6E-4B4D-95D8-5DC64ABAF7E5}" ShortID="432971040" Type="Play" Scope="One" Global="false">
 							<ElementList>
 								<Element ID="{BF15DF26-0493-46D7-B4C2-2D2AA0F2B2B7}" Global="false">
@@ -244,6 +250,16 @@
 					</ChildrenList>
 				</Event>
 				<Event Name="Activate" ID="{C7E3EC7F-6A3D-4179-9151-8B8EEBE3A4E9}"/>
+				<Event Name="ChangeToSummer" ID="{C0CF4533-FC21-4F5C-AD4F-FE7DD52AD9A3}">
+					<ChildrenList>
+						<Action Name="Set State" ID="{27447E32-E8F9-4F0D-A854-FC2510101ED7}" ShortID="945526665" Type="SetState" Scope="All" Global="true">
+							<SetItemParam>
+								<Group Name="Musique" ID="{16291CB5-C6B8-4CF0-B098-AD9D264ED482}"/>
+								<GroupItem Name="Summer" ID="{883A8F4F-748B-45CF-B426-54CC89D3E50C}"/>
+							</SetItemParam>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

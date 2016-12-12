@@ -22,14 +22,21 @@
 			<Path>Darklight.bnk</Path>
 			<IncludedEvents>
 				<Event Id="2043178279" Name="BirdScream" ObjectPath="\Events\Default Work Unit\BirdScream"/>
+				<Event Id="3269047257" Name="ChangeToSummer" ObjectPath="\Events\Default Work Unit\ChangeToSummer"/>
 				<Event Id="948631664" Name="Explode" ObjectPath="\Events\Default Work Unit\Explode"/>
+				<Event Id="3677793184" Name="GateOpen" ObjectPath="\Events\Default Work Unit\GateOpen"/>
 				<Event Id="3081493535" Name="Hero_Walk" ObjectPath="\Events\Default Work Unit\Hero_Walk"/>
+				<Event Id="1929327811" Name="Mainmenu_Music" ObjectPath="\Events\Default Work Unit\Mainmenu_Music"/>
 				<Event Id="69765534" Name="Musique" ObjectPath="\Events\Default Work Unit\Musique"/>
 				<Event Id="21544190" Name="OnClick" ObjectPath="\Events\Default Work Unit\OnClick"/>
 				<Event Id="3092587493" Name="Pause" ObjectPath="\Events\Default Work Unit\Pause"/>
 				<Event Id="3505762067" Name="WinterPlant_Activate" ObjectPath="\Events\Default Work Unit\WinterPlant_Activate"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="17662269" Language="SFX">
+					<ShortName>Clean\GateOpen.wav</ShortName>
+					<Path>SFX\Clean\GateOpen_9E69E797.wem</Path>
+				</File>
 				<File Id="31865556" Language="SFX">
 					<ShortName>Clean\Musique_ete.wav</ShortName>
 					<Path>SFX\Clean\Musique_ete_4B8CC0C5.wem</Path>
@@ -93,6 +100,10 @@
 				<File Id="1018985407" Language="SFX">
 					<ShortName>Clean\E_WinterHangDrum5.wav</ShortName>
 					<Path>SFX\Clean\E_WinterHangDrum5_9E69E797.wem</Path>
+				</File>
+				<File Id="1067089011" Language="SFX">
+					<ShortName>Clean\MainMenu_Music.wav</ShortName>
+					<Path>SFX\Clean\MainMenu_Music_4B8CC0C5.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
