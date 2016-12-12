@@ -1,16 +1,20 @@
 Event	ID	Name			Wwise Object Path	Notes
 	21544190	OnClick			\Default Work Unit\OnClick	
 	69765534	Musique			\Default Work Unit\Musique	
+	536165031	Bug_Walk			\Default Work Unit\Bug_Walk	
+	737750752	Bug_Attack			\Default Work Unit\Bug_Attack	
 	948631664	Explode			\Default Work Unit\Explode	
 	1929327811	Mainmenu_Music			\Default Work Unit\Mainmenu_Music	
 	2043178279	BirdScream			\Default Work Unit\BirdScream	
 	2082409705	ChangeToWinter			\Default Work Unit\ChangeToWinter	
+	2636659318	MainMenu_Select			\Default Work Unit\MainMenu_Select	
 	3010485277	ChangeToBoss			\Default Work Unit\ChangeToBoss	
 	3081493535	Hero_Walk			\Default Work Unit\Hero_Walk	
 	3092587493	Pause			\Default Work Unit\Pause	
 	3269047257	ChangeToSummer			\Default Work Unit\ChangeToSummer	
 	3505762067	WinterPlant_Activate			\Default Work Unit\WinterPlant_Activate	
 	3677793184	GateOpen			\Default Work Unit\GateOpen	
+	3838607425	Boss_Crowsound			\Default Work Unit\Boss_Crowsound	
 
 State Group	ID	Name			Wwise Object Path	Notes
 	69765534	Musique			\Default Work Unit\Musique	
@@ -30,26 +34,39 @@ Custom State	ID	Name	State Group	Owner		Notes
 	759008358	Winter	Musique	\Actor-Mixer Hierarchy\Default Work Unit\Musique\Musique_ete		
 
 Effect plug-ins	ID	Name	Type				Notes
+	48620415	Have_U_Ever_Been_Outside	Wwise RoomVerb			
 	398125829	Wwise Time Stretch (Custom)	Wwise Time Stretch			
 	484890516	Church_Small_Wood	Wwise RoomVerb			
+	602546716	Room_Large	Wwise RoomVerb			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	17662269	GateOpen	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\GateOpen_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\GateOpen		1082256
 	31865556	Musique_ete	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\Musique_ete_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Musique\Musique_ete		28556544
 	91590030	E_WinterHangDrum3	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\E_WinterHangDrum3_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\WinterPlantActivation\E_WinterHangDrum3		877584
+	228211783	Bug_Walk3	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\Bug_Walk3_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\BugWalk\Bug_Walk3		30476
+	257259855	Mainmenu_Sparkle2	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\Mainmenu_Sparkle2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenuSelect\MainMenu_Sparkle\Mainmenu_Sparkle2		232520
 	322358094	Spark2	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\Spark2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Spark2		77812
 	329559827	BirdScream	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\BirdScream_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\BirdScream		366408
+	337574644	Bug_Walk	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\Bug_Walk_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\BugWalk\Bug_Walk		33776
 	344944238	E_WinterHangDrum8	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\E_WinterHangDrum8_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\WinterPlantActivation\E_WinterHangDrum8		656624
+	359743963	Mainmenu_Sparkle3	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\Mainmenu_Sparkle3_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenuSelect\MainMenu_Sparkle\Mainmenu_Sparkle3		188320
 	372296304	E_WinterHangDrum1	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\E_WinterHangDrum1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\WinterPlantActivation\E_WinterHangDrum1		855104
 	426980613	Musique_Boss	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\Musique_Boss_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Musique\Musique_Boss		6226496
 	442504836	E_WinterHangDrum6	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\E_WinterHangDrum6_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\WinterPlantActivation\E_WinterHangDrum6		1039552
+	448121895	Bug_Walk2	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\Bug_Walk2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\BugWalk\Bug_Walk2		12064
 	452232292	Musique_Hiver	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\Musique_Hiver_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Musique\Musique_Hiver		8100844
 	487903514	E_WinterHangDrum4	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\E_WinterHangDrum4_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\WinterPlantActivation\E_WinterHangDrum4		833700
 	516349740	Pause	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\Pause_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pause		16720
 	573702648	E_WinterHangDrum7	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\E_WinterHangDrum7_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\WinterPlantActivation\E_WinterHangDrum7		794428
 	693335126	MenuConfirm2	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\MenuConfirm2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\MenuConfirm2		344680
+	737631668	Mainmenu_Sparkle1	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\Mainmenu_Sparkle1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenuSelect\MainMenu_Sparkle\Mainmenu_Sparkle1		147664
+	752980730	Mainmenu_Sparkle4	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\Mainmenu_Sparkle4_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenuSelect\MainMenu_Sparkle\Mainmenu_Sparkle4		257036
 	814825617	E_WinterHangDrum2	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\E_WinterHangDrum2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\WinterPlantActivation\E_WinterHangDrum2		871636
+	820380433	MenuSelect	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\MenuSelect_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenuSelect\MenuSelect		115264
+	820403553	BossBird_Crowsound	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\Bird_Crowsound_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\BossBird_Crowsound		140032
+	838092039	Bug_Attack	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\Bug_Attack_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\BugWalk\Bug_Attack		38232
 	851791896	Step_Walk	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\Step_Walk_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Step_Walk		79864
+	1016457571	Bug_Walk4	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\Bug_Walk4_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\BugWalk\Bug_Walk4		24832
 	1018985407	E_WinterHangDrum5	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\E_WinterHangDrum5_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\WinterPlantActivation\E_WinterHangDrum5		981104
 	1067089011	MainMenu_Music	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Windows\SFX\Clean\MainMenu_Music_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenu_Music		24952896
 

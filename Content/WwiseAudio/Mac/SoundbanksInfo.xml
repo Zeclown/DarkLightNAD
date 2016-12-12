@@ -22,6 +22,9 @@
 			<Path>Darklight.bnk</Path>
 			<IncludedEvents>
 				<Event Id="2043178279" Name="BirdScream" ObjectPath="\Events\Default Work Unit\BirdScream"/>
+				<Event Id="3838607425" Name="Boss_Crowsound" ObjectPath="\Events\Default Work Unit\Boss_Crowsound"/>
+				<Event Id="737750752" Name="Bug_Attack" ObjectPath="\Events\Default Work Unit\Bug_Attack"/>
+				<Event Id="536165031" Name="Bug_Walk" ObjectPath="\Events\Default Work Unit\Bug_Walk"/>
 				<Event Id="3010485277" Name="ChangeToBoss" ObjectPath="\Events\Default Work Unit\ChangeToBoss"/>
 				<Event Id="3269047257" Name="ChangeToSummer" ObjectPath="\Events\Default Work Unit\ChangeToSummer"/>
 				<Event Id="2082409705" Name="ChangeToWinter" ObjectPath="\Events\Default Work Unit\ChangeToWinter"/>
@@ -29,6 +32,7 @@
 				<Event Id="3677793184" Name="GateOpen" ObjectPath="\Events\Default Work Unit\GateOpen"/>
 				<Event Id="3081493535" Name="Hero_Walk" ObjectPath="\Events\Default Work Unit\Hero_Walk"/>
 				<Event Id="1929327811" Name="Mainmenu_Music" ObjectPath="\Events\Default Work Unit\Mainmenu_Music"/>
+				<Event Id="2636659318" Name="MainMenu_Select" ObjectPath="\Events\Default Work Unit\MainMenu_Select"/>
 				<Event Id="69765534" Name="Musique" ObjectPath="\Events\Default Work Unit\Musique"/>
 				<Event Id="21544190" Name="OnClick" ObjectPath="\Events\Default Work Unit\OnClick"/>
 				<Event Id="3092587493" Name="Pause" ObjectPath="\Events\Default Work Unit\Pause"/>
@@ -47,6 +51,14 @@
 					<ShortName>Clean\E_WinterHangDrum3.wav</ShortName>
 					<Path>SFX\Clean\E_WinterHangDrum3_9E69E797.wem</Path>
 				</File>
+				<File Id="228211783" Language="SFX">
+					<ShortName>Clean\Bug_Walk3.wav</ShortName>
+					<Path>SFX\Clean\Bug_Walk3_9E69E797.wem</Path>
+				</File>
+				<File Id="257259855" Language="SFX">
+					<ShortName>Clean\Mainmenu_Sparkle2.wav</ShortName>
+					<Path>SFX\Clean\Mainmenu_Sparkle2_9E69E797.wem</Path>
+				</File>
 				<File Id="322358094" Language="SFX">
 					<ShortName>Clean\Spark2.wav</ShortName>
 					<Path>SFX\Clean\Spark2_9E69E797.wem</Path>
@@ -55,9 +67,17 @@
 					<ShortName>Clean\BirdScream.wav</ShortName>
 					<Path>SFX\Clean\BirdScream_9E69E797.wem</Path>
 				</File>
+				<File Id="337574644" Language="SFX">
+					<ShortName>Clean\Bug_Walk.wav</ShortName>
+					<Path>SFX\Clean\Bug_Walk_9E69E797.wem</Path>
+				</File>
 				<File Id="344944238" Language="SFX">
 					<ShortName>Clean\E_WinterHangDrum8.wav</ShortName>
 					<Path>SFX\Clean\E_WinterHangDrum8_9E69E797.wem</Path>
+				</File>
+				<File Id="359743963" Language="SFX">
+					<ShortName>Clean\Mainmenu_Sparkle3.wav</ShortName>
+					<Path>SFX\Clean\Mainmenu_Sparkle3_9E69E797.wem</Path>
 				</File>
 				<File Id="372296304" Language="SFX">
 					<ShortName>Clean\E_WinterHangDrum1.wav</ShortName>
@@ -70,6 +90,10 @@
 				<File Id="442504836" Language="SFX">
 					<ShortName>Clean\E_WinterHangDrum6.wav</ShortName>
 					<Path>SFX\Clean\E_WinterHangDrum6_9E69E797.wem</Path>
+				</File>
+				<File Id="448121895" Language="SFX">
+					<ShortName>Clean\Bug_Walk2.wav</ShortName>
+					<Path>SFX\Clean\Bug_Walk2_9E69E797.wem</Path>
 				</File>
 				<File Id="452232292" Language="SFX">
 					<ShortName>Clean\Musique_Hiver.wav</ShortName>
@@ -91,13 +115,37 @@
 					<ShortName>Clean\MenuConfirm2.wav</ShortName>
 					<Path>SFX\Clean\MenuConfirm2_9E69E797.wem</Path>
 				</File>
+				<File Id="737631668" Language="SFX">
+					<ShortName>Clean\Mainmenu_Sparkle1.wav</ShortName>
+					<Path>SFX\Clean\Mainmenu_Sparkle1_9E69E797.wem</Path>
+				</File>
+				<File Id="752980730" Language="SFX">
+					<ShortName>Clean\Mainmenu_Sparkle4.wav</ShortName>
+					<Path>SFX\Clean\Mainmenu_Sparkle4_9E69E797.wem</Path>
+				</File>
 				<File Id="814825617" Language="SFX">
 					<ShortName>Clean\E_WinterHangDrum2.wav</ShortName>
 					<Path>SFX\Clean\E_WinterHangDrum2_9E69E797.wem</Path>
 				</File>
+				<File Id="820380433" Language="SFX">
+					<ShortName>Clean\MenuSelect.wav</ShortName>
+					<Path>SFX\Clean\MenuSelect_9E69E797.wem</Path>
+				</File>
+				<File Id="820403553" Language="SFX">
+					<ShortName>Clean\Bird_Crowsound.wav</ShortName>
+					<Path>SFX\Clean\Bird_Crowsound_9E69E797.wem</Path>
+				</File>
+				<File Id="838092039" Language="SFX">
+					<ShortName>Clean\Bug_Attack.wav</ShortName>
+					<Path>SFX\Clean\Bug_Attack_9E69E797.wem</Path>
+				</File>
 				<File Id="851791896" Language="SFX">
 					<ShortName>Clean\Step_Walk.wav</ShortName>
 					<Path>SFX\Clean\Step_Walk_9E69E797.wem</Path>
+				</File>
+				<File Id="1016457571" Language="SFX">
+					<ShortName>Clean\Bug_Walk4.wav</ShortName>
+					<Path>SFX\Clean\Bug_Walk4_9E69E797.wem</Path>
 				</File>
 				<File Id="1018985407" Language="SFX">
 					<ShortName>Clean\E_WinterHangDrum5.wav</ShortName>
