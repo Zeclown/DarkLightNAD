@@ -43,3 +43,6 @@ float AEnemyCharacter::GetHealthPoint() {
 	return HealthPoint;
 }
 
+float AEnemyCharacter::GetMaxHealthPoint() {
+	return MaxHealthPoint;
+}
