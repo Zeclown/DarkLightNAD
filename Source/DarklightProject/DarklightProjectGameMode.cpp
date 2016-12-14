@@ -44,7 +44,7 @@ void ADarklightProjectGameMode::BeginPlay()
 		SavedPoints.Add(TArray<FTrailPoint>());
 	}
 	LoadSave();
-	//OnGameLoaded();
+	OnGameLoaded();
 }
 
 void ADarklightProjectGameMode::EndGame_Implementation()

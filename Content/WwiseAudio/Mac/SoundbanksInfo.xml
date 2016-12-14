@@ -22,6 +22,7 @@
 			<Path>Darklight.bnk</Path>
 			<IncludedEvents>
 				<Event Id="2043178279" Name="BirdScream" ObjectPath="\Events\Default Work Unit\BirdScream"/>
+				<Event Id="1293775909" Name="BirdWingsFlap" ObjectPath="\Events\Default Work Unit\BirdWingsFlap"/>
 				<Event Id="3838607425" Name="Boss_Crowsound" ObjectPath="\Events\Default Work Unit\Boss_Crowsound"/>
 				<Event Id="737750752" Name="Bug_Attack" ObjectPath="\Events\Default Work Unit\Bug_Attack"/>
 				<Event Id="536165031" Name="Bug_Walk" ObjectPath="\Events\Default Work Unit\Bug_Walk"/>
@@ -106,6 +107,10 @@
 				<File Id="516349740" Language="SFX">
 					<ShortName>Clean\Pause.wav</ShortName>
 					<Path>SFX\Clean\Pause_9E69E797.wem</Path>
+				</File>
+				<File Id="532116099" Language="SFX">
+					<ShortName>Clean\Bird_WingFlap.wav</ShortName>
+					<Path>SFX\Clean\Bird_WingFlap_9E69E797.wem</Path>
 				</File>
 				<File Id="573702648" Language="SFX">
 					<ShortName>Clean\E_WinterHangDrum7.wav</ShortName>

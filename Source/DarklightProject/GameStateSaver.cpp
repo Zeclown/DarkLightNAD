@@ -60,6 +60,7 @@ GameStateSaver * GameStateSaver::SaveInit(UWorld* WorldToSave, ACheckPointPlant*
 {
 	//Create new instance of thread if it does not exist
 	//		and the platform supports multi threading!
+	Shutdown();
 	if (!Instance && FPlatformProcess::SupportsMultithreading())
 	{
 		Instance = new GameStateSaver(WorldToSave, CheckPoint, LevelName, PlayerScore,GameMode);

@@ -83,7 +83,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-3</Value>
+								<Value>12</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -639,7 +639,7 @@
 						</Sound>
 					</ChildrenList>
 				</RandomSequenceContainer>
-				<Sound Name="Bird_WingFlap" ID="{B1773FF2-8299-43CC-9DA1-88177B5C4DBB}" ShortID="868814437" Type="SoundFX">
+				<Sound Name="BirdWingsFlap" ID="{B1773FF2-8299-43CC-9DA1-88177B5C4DBB}" ShortID="868814437" Type="SoundFX">
 					<PropertyList>
 						<Property Name="Pitch" Type="int32">
 							<ValueList>
@@ -656,6 +656,11 @@
 									</Modifier>
 								</ModifierInfo>
 							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>12</Value>
+							</ValueList>
 						</Property>
 					</PropertyList>
 					<ReferenceList>
@@ -1469,6 +1474,54 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="HeroJump" ID="{A0CF5F51-C292-466D-B57D-0BAB9DF44426}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="BirdScream2" ID="{A16098C9-135B-4165-B459-37A6DA649FEA}" ShortID="865773034" Type="SoundFX">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>9</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="56304__syna-max__monster-death-scream" ID="{F04C1695-9DA5-4E41-92BB-2A877B7AC898}" ShortID="435673657">
+							<Language>SFX</Language>
+							<AudioFile>56304__syna-max__monster-death-scream.wav</AudioFile>
+							<ConvertedFileIDList>
+								<File ID="304306960"/>
+							</ConvertedFileIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="56304__syna-max__monster-death-scream" ID="{F04C1695-9DA5-4E41-92BB-2A877B7AC898}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="56304__syna-max__monster-death-scream" ID="{227C0A6D-5BC3-461D-B05D-10E2D08D4156}" ShortID="228211145" Type="SoundFX">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{041A8F2F-F022-4DDC-95BB-5075F565B744}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{603937C6-E70F-4F5E-AE8C-609EDA373D25}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="56304__syna-max__monster-death-scream" ID="{ADF019D7-DAA4-47E8-8181-B20A629DE1D7}" ShortID="304306960">
+							<Language>SFX</Language>
+							<AudioFile>56304__syna-max__monster-death-scream.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="56304__syna-max__monster-death-scream" ID="{ADF019D7-DAA4-47E8-8181-B20A629DE1D7}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

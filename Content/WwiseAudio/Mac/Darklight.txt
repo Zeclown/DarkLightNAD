@@ -4,6 +4,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	536165031	Bug_Walk			\Default Work Unit\Bug_Walk	
 	737750752	Bug_Attack			\Default Work Unit\Bug_Attack	
 	948631664	Explode			\Default Work Unit\Explode	
+	1293775909	BirdWingsFlap			\Default Work Unit\BirdWingsFlap	
 	1929327811	Mainmenu_Music			\Default Work Unit\Mainmenu_Music	
 	2043178279	BirdScream			\Default Work Unit\BirdScream	
 	2082409705	ChangeToWinter			\Default Work Unit\ChangeToWinter	
@@ -57,6 +58,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	452232292	Musique_Hiver	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Mac\SFX\Clean\Musique_Hiver_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Musique\Musique_Hiver		8100844
 	487903514	E_WinterHangDrum4	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Mac\SFX\Clean\E_WinterHangDrum4_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\WinterPlantActivation\E_WinterHangDrum4		833700
 	516349740	Pause	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Mac\SFX\Clean\Pause_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pause		16720
+	532116099	BirdWingsFlap	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Mac\SFX\Clean\Bird_WingFlap_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\BirdWingsFlap		129848
 	573702648	E_WinterHangDrum7	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Mac\SFX\Clean\E_WinterHangDrum7_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\WinterPlantActivation\E_WinterHangDrum7		794428
 	693335126	MenuConfirm2	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Mac\SFX\Clean\MenuConfirm2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\MenuConfirm2		344680
 	737631668	Mainmenu_Sparkle1	D:\Unreal Projects\DPJ\DarkLightNAD_WwiseProject\.cache\Mac\SFX\Clean\Mainmenu_Sparkle1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\MainMenuSelect\MainMenu_Sparkle\Mainmenu_Sparkle1		147664

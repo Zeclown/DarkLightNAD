@@ -123,7 +123,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="BirdWingFlap" ID="{D3BB35E6-996F-4BB8-BE6D-95AC673B5D0D}">
+				<Event Name="BirdWingsFlap" ID="{D3BB35E6-996F-4BB8-BE6D-95AC673B5D0D}">
 					<ChildrenList>
 						<Action Name="Play" ID="{5D5F716C-1BEF-465D-B0AA-5D1BE30FD31C}" ShortID="985251718" Type="Play" Scope="One" Global="false">
 							<PropertyList>
@@ -131,7 +131,7 @@
 							</PropertyList>
 							<ElementList>
 								<Element ID="{71C8BB1C-8FE7-44FA-9026-1278A03044D4}" Global="false">
-									<ObjectRef Name="Bird_WingFlap" ID="{B1773FF2-8299-43CC-9DA1-88177B5C4DBB}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
+									<ObjectRef Name="BirdWingsFlap" ID="{B1773FF2-8299-43CC-9DA1-88177B5C4DBB}" WorkUnitID="{8E367F6E-AA23-430C-B1E9-05C2E2A7C2F8}"/>
 								</Element>
 							</ElementList>
 						</Action>
